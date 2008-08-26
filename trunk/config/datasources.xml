@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+	<datasource>
+		<name>seekdispatch</name>
+		<base>srdfip</base>
+		<hostname>127.0.0.1</hostname>
+		<driver>mysql</driver>
+		<username>root</username>
+		<password></password>
+		<port></port>
+	</datasource>
+</datasources>
