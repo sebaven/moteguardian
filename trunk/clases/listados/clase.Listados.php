@@ -1,12 +1,7 @@
 <? 
 include_once BASE_DIR ."clases/listados/clase.ListadoAuditoria.php";
 include_once BASE_DIR ."clases/listados/clase.ListadoUsuarios.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoPlanificacion.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoCentrales.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoActividad.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoPlantillas.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoTareas.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoPlanificacionEnvio.php";
+
 
 class Listados
 {		

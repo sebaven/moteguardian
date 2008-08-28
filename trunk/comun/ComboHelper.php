@@ -1,12 +1,6 @@
 <?
 include_once BASE_DIR ."clases/dao/dao.Usuario.php";
 include_once BASE_DIR ."clases/dao/dao.Rol.php";
-include_once BASE_DIR ."clases/dao/dao.TecnologiaRecolector.php";
-include_once BASE_DIR ."clases/dao/dao.TipoFiltro.php";
-include_once BASE_DIR . 'clases/dao/dao.Central.php';
-include_once BASE_DIR . 'clases/dao/dao.Plantilla.php';
-include_once BASE_DIR . 'clases/dao/dao.TecnologiaEnviador.php';
-include_once BASE_DIR . 'clases/dao/dao.TecnologiaCentral.php';
 
 function ComboUsuario($first=true,$text=''){
 	$usuarioDAO = new UsuarioDAO();
@@ -16,22 +10,6 @@ function ComboUsuario($first=true,$text=''){
 function ComboRol($first=true,$text=''){
 	$rolDAO = new RolDAO();
 	return PresentationUtil::getCombo($rolDAO->getAll("descripcion"), "descripcion",$first,$text);
-}
-
-function ComboTipoFiltro($first=true, $text='')
-{
-	$tipoFiltroDAO = new TipoFiltroDAO();
-	return PresentationUtil::getCombo($tipoFiltroDAO->getAll('nombre'),'nombre',$first,$text);
-}
-
-function ComboTecnologiaRecoleccion($first=true, $text=''){
-	$tecnologiaRecolectorDAO = new TecnologiaRecolectorDAO();
-	return PresentationUtil::getCombo($tecnologiaRecolectorDAO->getAll("nombre_tecnologia"),"nombre_tecnologia",$first,$text);
-}
-
-function ComboLuegoTransferencia(){
-	$luegoTransferencia = array( 0 => PropertiesHelper::GetKey("recolectorFTP.soloCopiar"),1 => PropertiesHelper::GetKey("recolectorFTP.borrar") );
-	return $luegoTransferencia;
 }
 
 function ComboHoras(){
@@ -70,23 +48,4 @@ function ComboDias(){
 	return $luegoTransferencia;		
 }
 
-function ComboCentral($first=false){
-	$centralDAO = new CentralDAO();
-	return PresentationUtil::getCombo($centralDAO->getAll(), "nombre",$first);
-}
-
-function ComboPlantillaRecoleccion($first=false){
-	$plantillaDAO = new PlantillaDAO();
-	return PresentationUtil::getCombo($plantillaDAO->getAll(), "nombre",$first);
-}
-
-function ComboTecnologiaEnviador($first=false){
-	$tecnologiaEnviadorDAO = new TecnologiaEnviadorDAO();
- 	return PresentationUtil::getCombo($tecnologiaEnviadorDAO->getAll(), "nombre_tecnologia",$first);	
-}
-
-function ComboTecnologiaCentral($first=false){
-	$tecnologiaCentralDAO = new TecnologiaCentralDAO();
- 	return PresentationUtil::getCombo($tecnologiaCentralDAO->getAll(), "nombre",$first);	
-}
 ?>
