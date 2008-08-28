@@ -52,85 +52,7 @@
 		<accion>UsuarioDel</accion>
 		<rol>ADMIN</rol>
 	</permiso>
-	
-	<!-- C E N T R A L -->	
-	<permiso>
-		<accion>CentralAlta</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>CentralBuscar</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>CentralBaja</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>CentralModificar</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<!-- R E C O L E C T O R  F T P -->	
-	<permiso>
-		<accion>RecolectorFTPConf</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>SalidaPopupRecolectorFTP</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<!-- P L A N T I L L A -->
-	<permiso>
-		<accion>PlantillaBaja</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>ValidadorDuplicadosConf</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>PlantillaConfiguracion</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>NodoPlantillaRemove</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>PlantillaAdmin</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>SalidaPopupValidadorDuplicados</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	
-	<!-- A C T I V I D A D -->
-	<permiso>
-		<accion>ActividadAlta</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>ActividadBuscar</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>ActividadAdministracion</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>ActividadBaja</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>ActividadEnvioBaja</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>ActividadEjecutarAhora</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	
+
 	<!-- P L A N I F I C A C I O N  -->
 	<permiso>
 		<accion>PlanificacionBaja</accion>
@@ -144,23 +66,7 @@
 		<accion>SalidaPopupPlanificacion</accion>
 		<rol>ADMIN</rol>
 	</permiso>
-	
-	<!-- E N V I A D O R  F T P -->	
-	<permiso>
-		<accion>EnviadorFTPConf</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>SalidaPopupEnviadorFTP</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	
-	<!-- M O N I T O R E O  D E  T A R E A S -->
-	<permiso>
-		<accion>MonitoreoTareas</accion>
-		<rol>ADMIN</rol>
-		<rol>USUARIO</rol>
-	</permiso>		
+		
 </permisos>
 
 	
