@@ -27,24 +27,12 @@
 		<clase>CambiarPassword</clase>
 	</accion>
 	<accion>
-		<nombre>AuditoriaAdm</nombre>
-		<link>auditoria</link>
-		<modulo>general</modulo>
-		<clase>AuditoriaAdm</clase>
-	</accion>
-	<accion>
 		<nombre>PermisoDenegado</nombre>
 		<link>permiso_denegado</link>
 		<modulo>general</modulo>
 		<clase>PermisoDenegado</clase>
 	</accion>
-	<accion>
-		<nombre>ConfiguracionSistema</nombre>
-		<link>configuracion_sistema</link>
-		<modulo>general</modulo>
-		<clase>ConfiguracionSistema</clase>
-	</accion>	
-
+	
 	<!-- U S U A R I O S -->
 	<accion>
 		<nombre>UsuarioAlta</nombre>
@@ -69,7 +57,14 @@
 		<link>usuario_del</link>
 		<modulo>usuario</modulo>
 		<clase>UsuarioDel</clase>
-		
+	</accion>
+	
+	<!-- SALAS -->
+	<accion>
+		<nombre>SalaSelect</nombre>
+		<link>sala_select</link>
+		<modulo>Sala</modulo>
+		<clase>SalaSelect</clase>
 	</accion>
 	
 	<!--PLANIFICACION-->

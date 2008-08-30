@@ -53,6 +53,12 @@
 		<rol>ADMIN</rol>
 	</permiso>
 
+	<!-- SALA -->
+	<permiso>
+		<accion>SalaSelect</accion>
+		<rol>ADMIN</rol>
+	</permiso>
+	
 	<!-- P L A N I F I C A C I O N  -->
 	<permiso>
 		<accion>PlanificacionBaja</accion>
