@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE acciones SYSTEM "ionix.dtd">
+<acciones>
+	
+	
+	<!-- G E N E R A L -->
+	
+	<accion>
+		<nombre>Login</nombre>
+		<link>login</link>
+		<modulo>general</modulo>
+		<clase>Login</clase>
+	</accion>
+	
+	<accion>
+		<nombre>Inicio</nombre>
+		<link>inicio</link>
+		<modulo>general</modulo>
+		<clase>Inicio</clase>
+	</accion>
+	
+	<accion>
+		<nombre>Logout</nombre>
+		<link>logout</link>
+		<modulo>general</modulo>
+		<clase>Logout</clase>
+	</accion>
+	
+	<accion>
+		<nombre>CambiarPassword</nombre>
+		<link>cambiar_pass</link>
+		<modulo>general</modulo>
+		<clase>CambiarPassword</clase>
+	</accion>
+		
+	<accion>
+		<nombre>PermisoDenegado</nombre>
+		<link>permiso_denegado</link>
+		<modulo>general</modulo>
+		<clase>PermisoDenegado</clase>
+	</accion>
+	 
+	<accion>
+		<nombre>ConfiguracionSistema</nombre>
+		<link>configuracion_sistema</link>
+		<modulo>general</modulo>
+		<clase>ConfiguracionSistema</clase>
+	</accion>	
+
+
+	<!-- U S U A R I O S -->
+	
+	<accion>
+		<nombre>UsuarioAlta</nombre>
+		<link>usuario_new</link>
+		<modulo>usuario</modulo>
+		<clase>UsuarioAlta</clase>
+	</accion>	
+	
+	<accion>
+		<nombre>UsuarioMod</nombre>
+		<link>usuario_mod</link>
+		<modulo>usuario</modulo>
+		<clase>UsuarioMod</clase>
+	</accion>
+		
+	<accion>
+		<nombre>UsuarioBuscar</nombre>
+		<link>usuario_adm</link>
+		<modulo>usuario</modulo>
+		<clase>UsuarioAdm</clase>
+	</accion>
+	
+	<accion>
+		<nombre>UsuarioDel</nombre>
+		<link>usuario_del</link>
+		<modulo>usuario</modulo>
+		<clase>UsuarioDel</clase>		
+	</accion>
+	
+	
+	<!--CENTRALES-->
+	
+	<accion>
+		<nombre>TecnologiaCentralAdmin</nombre>
+		<link>tecnologia_central_admin</link>
+		<modulo>central</modulo>
+		<clase>TecnologiaCentralAdmin</clase>
+	</accion>
+	
+	<accion>
+		<nombre>TecnologiaCentralRemove</nombre>
+		<link>tecnologia_central_remove</link>
+		<modulo>central</modulo>
+		<clase>TecnologiaCentralRemove</clase>
+	</accion>
+	
+	<accion>
+		<nombre>CentralAlta</nombre>
+		<link>central_new</link>
+		<modulo>central</modulo>
+		<clase>CentralAlta</clase>
+	</accion>
+	
+	<accion>
+		<nombre>CentralBuscar</nombre>
+		<link>central_adm</link>
+		<modulo>central</modulo>
+		<clase>CentralAdm</clase>
+	</accion>
+	
+	<accion>
+		<nombre>CentralBaja</nombre>
+		<link>central_del</link>
+		<modulo>central</modulo>
+		<clase>CentralDel</clase>
+	</accion>
+	
+	<accion>
+		<nombre>CentralModificar</nombre>
+		<link>central_mod</link>
+		<modulo>central</modulo>
+		<clase>CentralMod</clase>
+	</accion>
+		
+			
+	<!--RECOLECTOR FTP-->
+	
+	<accion>
+		<nombre>RecolectorFTPConf</nombre>
+		<link>recolector_FTP_conf</link>
+		<modulo>central</modulo>
+		<clase>RecolectorFTPConf</clase>
+	</accion>
+	
+	<accion>
+		<nombre>SalidaPopupRecolectorFTP</nombre>
+		<link>salida_popup_recolectorFTP</link>
+		<modulo>central</modulo>
+		<clase>SalidaPopupRecolectorFTP</clase>
+	</accion>
+	
+	
+	<!--PLANTILLA-->
+	
+	<accion>
+		<nombre>ValidadorDuplicadosConf</nombre>
+		<link>filtro_validador_duplicados</link>
+		<modulo>plantilla</modulo>
+		<clase>ValidadorDuplicadosConf</clase>
+	</accion>
+	
+	<accion>
+		<nombre>PlantillaConfiguracion</nombre>
+		<link>plantilla_configuracion</link>
+		<modulo>plantilla</modulo>
+		<clase>PlantillaConfiguracion</clase>
+	</accion>	
+	
+	<accion>
+		<nombre>NodoPlantillaRemove</nombre>
+		<link>borrar_filtro</link>
+		<modulo>plantilla</modulo>
+		<clase>NodoPlantillaRemove</clase>
+	</accion>
+	
+	<accion>
+		<nombre>PlantillaAdmin</nombre>
+		<link>plantilla_admin</link>
+		<modulo>plantilla</modulo>
+		<clase>PlantillaAdmin</clase>
+	</accion>
+	
+	<accion>
+		<nombre>PlantillaBaja</nombre>
+		<link>plantilla_del</link>
+		<modulo>plantilla</modulo>
+		<clase>PlantillaBaja</clase>
+	</accion>
+	
+	<accion>
+		<nombre>SalidaPopupValidadorDuplicados</nombre>
+		<link>salida_popup_validador_duplicados</link>
+		<modulo>plantilla</modulo>
+		<clase>SalidaPopupValidadorDuplicados</clase>
+	</accion>
+
+	
+	<!--ACTIVIDAD-->
+	
+	<accion>
+		<nombre>ActividadBuscar</nombre>
+		<link>actividad_bus</link>
+		<modulo>actividad</modulo>
+		<clase>ActividadBus</clase>
+	</accion>	
+	
+	<accion>
+		<nombre>ActividadBaja</nombre>
+		<link>actividad_del</link>
+		<modulo>actividad</modulo>
+		<clase>ActividadDel</clase>
+	</accion>	
+	
+	<accion>
+		<nombre>ActividadAdministracion</nombre>
+		<link>actividad_new</link>
+		<modulo>actividad</modulo>
+		<clase>ActividadAdm</clase>
+	</accion>	
+		
+	<!--PLANIFICACION-->
+	
+	<accion>
+		<nombre>PlanificacionConfiguracion</nombre>
+		<link>planificacion_configuracion</link>
+		<modulo>planificacion</modulo>
+		<clase>PlanificacionConfiguracion</clase>
+	</accion>		
+	
+	<accion>
+		<nombre>PlanificacionBaja</nombre>
+		<link>planificacion_del</link>
+		<modulo>planificacion</modulo>
+		<clase>PlanificacionDel</clase>
+	</accion>		
+	
+	<accion>
+		<nombre>SalidaPopupPlanificacion</nombre>
+		<link>salida_popup_planificacion</link>
+		<modulo>planificacion</modulo>
+		<clase>SalidaPopupPlanificacion</clase>
+	</accion>
+	
+	
+	<!-- ENVIADOR FTP -->
+	
+	<accion>
+		<nombre>EnviadorFTPConf</nombre>
+		<link>enviador_FTP_conf</link>
+		<modulo>enviador</modulo>
+		<clase>EnviadorFTPConf</clase>
+	</accion>
+	
+	<accion>
+		<nombre>SalidaPopupEnviadorFTP</nombre>
+		<link>salida_popup_enviadorFTP</link>
+		<modulo>enviador</modulo>
+		<clase>SalidaPopupEnviadorFTP</clase>
+	</accion>
+	
+	
+	<!-- MONITOREO DE TAREAS -->
+	
+	<accion>
+		<nombre>MonitoreoTareas</nombre>
+		<link>monitoreo_tareas</link>
+		<modulo>tareas</modulo>
+		<clase>MonitoreoTareas</clase>
+	</accion>
+	
+	<!-- VISUALIZACION CIRCUITOS -->
+	
+	<accion>
+		<nombre>VisualizacionCircuitos</nombre>
+		<link>visualizacion_circuitos</link>
+		<modulo>circuito</modulo>
+		<clase>VisualizacionCircuitos</clase>
+	</accion>	
+	
+	<!-- RECOLECCION -->
+	
+	<accion>
+		<nombre>RecoleccionConf</nombre>
+		<link>recoleccion_conf</link>
+		<modulo>recoleccion</modulo>
+		<clase>RecoleccionConf</clase>
+	</accion>
+	
+	<accion>
+		<nombre>LiberarCentral</nombre>
+		<link>liberar_central</link>
+		<modulo>recoleccion</modulo>
+		<clase>LiberarCentral</clase>
+	</accion>
+	
+	<accion>
+		<nombre>RecoleccionAdmin</nombre>
+		<link>recoleccion_admin</link>
+		<modulo>recoleccion</modulo>
+		<clase>RecoleccionAdmin</clase>
+	</accion>
+
+	<accion>
+		<nombre>RecoleccionDel</nombre>
+		<link>recoleccion_del</link>
+		<modulo>recoleccion</modulo>
+		<clase>RecoleccionDel</clase>
+	</accion>
+	
+	<accion>
+		<nombre>RecoleccionManualConf</nombre>
+		<link>recoleccion_manual_conf</link>
+		<modulo>recoleccion</modulo>
+		<clase>RecoleccionManualConf</clase>
+	</accion>
+	
+	<accion>
+		<nombre>LiberarCentralRecManual</nombre>
+		<link>liberar_central_rec_manual</link>
+		<modulo>recoleccion</modulo>
+		<clase>LiberarCentralRecManual</clase>
+	</accion>
+	
+	<accion>
+		<nombre>RecoleccionEjecutarAhora</nombre>
+		<link>recoleccion_ejecutar_ahora</link>
+		<modulo>recoleccion</modulo>
+		<clase>RecoleccionEjecutarAhora</clase>
+	</accion>
+	
+	<!-- HOST -->
+	
+	<accion>
+		<nombre>HostAlta</nombre>
+		<link>host_new</link>
+		<modulo>enviador</modulo>
+		<clase>HostAlta</clase>
+	</accion>
+	<accion>
+		<nombre>HostModificar</nombre>
+		<link>host_mod</link>
+		<modulo>enviador</modulo>
+		<clase>HostMod</clase>
+	</accion>
+	<accion>
+		<nombre>HostBuscar</nombre>
+		<link>host_adm</link>
+		<modulo>enviador</modulo>
+		<clase>HostAdm</clase>
+	</accion>
+	<accion>
+		<nombre>HostBaja</nombre>
+		<link>host_del</link>
+		<modulo>enviador</modulo>
+		<clase>HostDel</clase>
+	</accion>
+	
+	
+	<!-- ENVIO -->
+	
+	<accion>
+		<nombre>EnvioAlta</nombre>
+		<link>envio_adm</link>
+		<modulo>envio</modulo>
+		<clase>EnvioAdm</clase>
+	</accion>		
+	
+	<accion>
+		<nombre>EnvioBuscar</nombre>
+		<link>envio_bus</link>
+		<modulo>envio</modulo>
+		<clase>EnvioBus</clase>
+	</accion>	
+	
+	<accion>
+		<nombre>EnvioBaja</nombre>
+		<link>envio_del</link>
+		<modulo>envio</modulo>
+		<clase>EnvioDel</clase>
+	</accion>
+	
+	<accion>
+		<nombre>EnvioManualConf</nombre>
+		<link>envio_manual_conf</link>
+		<modulo>envio</modulo>
+		<clase>EnvioManualConf</clase>
+	</accion>	
+	
+	<accion>
+		<nombre>LiberarFicheroEnvManual</nombre>
+		<link>liberar_fichero_env_manual</link>
+		<modulo>envio</modulo>
+		<clase>LiberarFicheroEnvManual</clase>
+	</accion>
+	
+	<!-- ADMINISTRACION DE RECOLECCIONES Y ENVIOS EN CURSO -->
+	
+	<accion>
+		<nombre>AdministracionDeRecoleccionesYEnviosEnCurso</nombre>
+		<link>recolecciones_y_envios_en_curso</link>
+		<modulo>actividad</modulo>
+		<clase>AdministracionDeRecoleccionesYEnviosEnCurso</clase>
+	</accion>
+	<accion>
+		<nombre>CancelarTarea</nombre>
+		<link>cancelar_tarea</link>
+		<modulo>actividad</modulo>
+		<clase>CancelarTarea</clase>
+	</accion>
+	
+	
+	<!-- ESTADISTICAS -->
+	<accion>
+		<nombre>EstTiempoEnvio</nombre>
+		<link>est_tiempo_envio</link>
+		<modulo>estadisticas</modulo>
+		<clase>EstTiempoEnvio</clase>
+	</accion>
+
+	<accion>
+		<nombre>EstTotalTicketsYFicheros</nombre>
+		<link>est_total_tickets_y_ficheros</link>
+		<modulo>estadisticas</modulo>
+		<clase>EstTotalTicketsYFicheros</clase>
+	</accion>
+	
+	<accion>
+		<nombre>EstIntentosRecoleccionYEnvios</nombre>
+		<link>est_intentos_recoleccion_y_envios</link>
+		<modulo>estadisticas</modulo>
+		<clase>EstIntentosRecoleccionYEnvios</clase>
+	</accion>	
+	
+	<accion>
+		<nombre>EstTicketsHistoricos</nombre>
+		<link>est_tickets_historicos</link>
+		<modulo>estadisticas</modulo>
+		<clase>EstTicketsHistoricos</clase>
+	</accion>
+
+	<accion>
+		<nombre>EstTicketsFaltantes</nombre>
+		<link>est_tickets_faltantes</link>
+		<modulo>estadisticas</modulo>
+		<clase>EstTicketsFaltantes</clase>
+	</accion>		
+	
+	<!-- DIAGNOSTICO -->
+	<accion>
+		<nombre>Diagnostico</nombre>
+		<link>diagnostico</link>
+		<modulo>diagnostico</modulo>
+		<clase>Diagnostico</clase>
+	</accion>	
+	
+	
+	<!-- MONITOREO EN TIEMPO REAL -->
+	<accion>
+		<nombre>MonitoreoTiempoReal</nombre>
+		<link>monitoreo_tiempo_real</link>
+		<modulo>monitoreo</modulo>
+		<clase>MonitoreoTiempoReal</clase>
+	</accion>		
+</acciones>	

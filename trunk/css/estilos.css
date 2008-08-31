@@ -1,0 +1,391 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*---------------------------
+IMAGEN DE FONDO EN TABLE DE CONTENIDO
+-----------------------------*/
+#contenido {
+	background-image:url(../imagenes/bg_contentgradient.jpg);
+	background-repeat:repeat-x;
+} 
+
+/*---------------------------
+TITULO DE TABLA DE CONTENIDO
+-----------------------------*/
+.tituloSeccion{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:20px;
+	color:#0f177d;
+}
+
+.comentarios{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000000;
+	font-style:italic;
+}
+
+h2{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:20px;
+	color:#0f177d;
+}
+h5{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#FFFFFF;
+}
+
+p {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000000;
+}
+
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000000;
+}
+
+legend {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#000000;
+}
+
+p2 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-style:italic;
+	font-size:11px;
+	color:#000000;
+}
+
+/*---------------------------
+ESTILOS DE MENÚ + SUBMENÚ
+-----------------------------*/
+#nav ul {
+	margin-left: 10px;	
+	padding: 0;
+}
+
+#nav li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+	color:#0f177d;
+	text-indent: 15px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	list-style-type: circle;
+	list-style-position: outside;
+}
+
+#nav ul ul li{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	font-size:10px;
+	color:#0f177d;
+	text-indent: 15px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	list-style-image:url(../imagenes/liststyle_arrowblue.gif);
+	list-style-position: outside;
+}
+
+/*---------------------------
+ESTADO DE LOS LINKS
+-----------------------------*/
+a:{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color:#0f177d;
+	text-decoration: none;
+}
+a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	color:#0f177d;
+	font-size: 10px;
+	text-decoration: none;
+}
+a:visited{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color:#0f177d;
+	text-decoration: none;
+}
+a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-decoration:underline;
+	color: #000066;
+}
+a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-decoration:underline;
+	color: #004bc8;
+}
+
+/*---------------------------
+OTROS
+-----------------------------*/
+fieldset {
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000000;
+}
+
+.Estilo2 {
+	FONT-WEIGHT: bold;
+	COLOR: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-decoration: none;
+}
+
+.Estilo3 {
+	color: #FFFFFF
+}
+
+.formError {
+	color: #CC0000;
+	text-align: left;
+}
+
+.app {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000000;
+}
+
+/** --------------------------
+	BOTONES
+-----------------------------*/
+.boton {
+	background: transparent url('../imagenes/roundedge-gray-left2.gif') no-repeat top left;
+	border: none;
+	color: #FFFFFF;
+	padding-top: 2px;
+	padding-left: 14px;
+	*padding: 0px;
+}
+
+.botonGrad {
+	border: none;
+	background: transparent url('../imagenes/roundedge-gray-right2.gif') no-repeat top right;
+	padding: 4px 10px 4px 0px;
+	*padding: 0px;
+}
+
+.btn_popup {
+	cursor: pointer;
+}
+
+
+a.boldbuttons{
+	background: transparent url('../imagenes/roundedge-gray-left2.gif') no-repeat top left;
+	display: block;
+	float: left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	line-height: 12px; /* This value + 4px + 4px (top and bottom padding of SPAN) must equal height of button background (default is 30px) */
+	height: 20px; /* Height of button background height */
+	padding-left: 8px; /* Width of left menu image */
+	text-decoration: none;
+}
+
+a:link.boldbuttons, a:visited.boldbuttons, a:hover.boldbuttons, a:active.boldbuttons{
+	color: white; /*button text color*/
+}
+
+a.boldbuttons span{
+	background: transparent url('../imagenes/roundedge-gray-right2.gif') no-repeat top right;
+	display: block;
+	padding: 4px 10px 4px 2px; /*Set 10px to be equal or greater than'padding-left' value above*/
+}
+
+a:hover.boldbuttons{ /* Hover state CSS */
+	text-decoration: underline;
+}
+
+.buttonwrapper{ /* Container you can use to surround a CSS button to clear float */
+	overflow: hidden;
+	width: 100%;
+}
+
+
+
+/* MENSAJES DE ERROR */
+.msg_notify {
+	color: green;
+}
+
+.msg_error {
+	color: red;
+}
+
+/*----------------------------
+  TABLA ORIGENES Y DESTINOS
+-----------------------------*/
+
+table.origenesftp {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	/*border-width: 1px;
+	border-style: solid;
+	border-color: #d2d2d2;*/
+	width: 100%;
+	table-layout: fixed;
+}
+
+table.origenesftp th {
+	color: #FFFFFF;
+	background: url('../imagenes/bg_gradient50x1blue.jpg');
+	text-decoration: none;
+	overflow: hidden;
+}
+
+
+table.origenesftp tr.fila1 {
+	background-color: #FFFFFF;
+}
+
+table.origenesftp tr.fila2 {
+	background-color: #d7ebf5;
+}
+
+table.origenesftp td {
+	width: inherit;
+	word-wrap: break-word;
+	overflow: hidden;
+	height: 20px;
+	text-align: center;
+}
+
+
+/*----------------------------
+	PLANIFICACIONES
+-----------------------------*/
+
+.tabla_planificacion thead {
+  	background: url('../imagenes/bg_gradient50x1blue.jpg');
+  	color: white;
+  	border: none;
+}
+  
+.tabla_planificacion tbody {
+	background-color:#CCCCCC;
+}
+ 
+.tabla_planificacion tbody .td_editar{
+	text-align:center;
+	cursor:pointer;
+	width: 30px;
+}
+
+/*----------------------------
+	CIRCUITOS
+-----------------------------*/
+
+.tabla_circuitos div {
+	width: 90%;
+}
+
+.encabezado {
+	background: url('../imagenes/bg_gradient50x1blue.jpg');
+	color:#FFFFFF;
+	font-weight: bolder;	
+	text-align:"center";					
+}
+
+.encabezado td {
+	border-left-style: dotted;
+	border-left-color: white;
+	border-left-width: 1px;	
+	border-bottom-style: dotted;
+	border-bottom-color: white;
+	border-bottom-width: 1px;	
+}
+
+.detalles {
+	background-color: #d7ebf5;
+	color:#000000;
+	font-weight: normal;	
+	text-align: "center";	
+}
+
+/**-----------------------------
+	MENU ACORDION
+------------------------------*/
+
+.menu{
+	margin: 5px 0;
+	padding: 0;
+	width: 150px; /*width of menu*/
+	background-image:url(../imagenes/bg_gradient1x150menu.jpg);
+	background-repeat:repeat-y;
+	/*border: 1px solid #9A9A9A;*/
+	height: 400px;
+	overflow: hidden;
+}
+
+.menu div.silverheader a{
+	/*background: black url(silvergradient.gif) repeat-x center left;*/
+	font: bold 12px Arial, Helvetica, sans-serif;
+	color:#0f177d;
+	display: block;
+	position: relative; /*To help in the anchoring of the ".statusicon" icon image*/
+	width: auto;
+	padding: 5px 0;
+	padding-left: 8px;
+	text-decoration: none;
+}
+
+
+.menu div.silverheader a:visited, .menu div.silverheader a:active{
+	/*background: black url(silvergradient.gif) repeat-x center left;*/
+	font: bold 12px Arial, Helvetica, sans-serif;
+	color:#0f177d;
+}
+
+
+.menu div.selected a, .menu div.silverheader a:hover{
+	/*background-image: url(silvergradientover.gif);*/
+	font: bold 12px Arial, Helvetica, sans-serif;
+	color:#0f177d;
+}
+
+.menu div.submenu{ /*DIV that contains each sub menu*/
+	font: normal 11px Arial, Helvetica, sans-serif;
+	padding: 0px;
+	/*margin-left: 20px;*/
+	/*height: 100px;*/ /*Height that applies to all sub menu DIVs. A good idea when headers are toggled via "mouseover" instead of "click"*/
+}
+
+.menu  li a, li a:visited, li a:active{
+/*background: black url(silvergradient.gif) repeat-x center left;*/
+font: normal 11px Arial, Helvetica, sans-serif;
+color:#005a8c;
+text-decoration:none;
+}
+.menu  li  selected a, li a:hover{
+/*background-image: url(silvergradientover.gif);*/
+font: normal 11px Arial, Helvetica, sans-serif;
+text-decoration:none;
+color:#0f177d;
+}
+
+.menu ul {
+	line-height:16px;
+	list-style-image:url(../imagenes/liststyle_arrowblue.gif);
+	color:#0f177d;
+}
