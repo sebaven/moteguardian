@@ -1,284 +1,76 @@
-
 <permisos>
+
 	<!-- GENERAL -->
+	
 	<permiso>
 		<accion>Login</accion>
 		<rol>ADMIN</rol>
 		<rol>USUARIO</rol>
 	</permiso>
+	
 	<permiso>
 		<accion>Logout</accion>
 		<rol>ADMIN</rol>
 		<rol>USUARIO</rol>
 	</permiso>
+	
 	<permiso>
 		<accion>Inicio</accion>
 		<rol>USUARIO</rol>
 		<rol>ADMIN</rol>
 	</permiso>
-	<permiso>
-		<accion>AuditoriaAdm</accion>
-		<rol>ADMIN</rol>
-	</permiso>
+	
 	<permiso>
 		<accion>CambiarPassword</accion>
 		<rol>ADMIN</rol>
 		<rol>USUARIO</rol>
 	</permiso>
+	
 	<permiso>
 		<accion>PermisoDenegado</accion>
 		<rol>ADMIN</rol>
 		<rol>USUARIO</rol>
 	</permiso>	
-	<permiso>
-		<accion>ConfiguracionSistema</accion>
-		<rol>ADMIN</rol>						
-	</permiso>		
+	
+	<!-- U S U A R I O S -->
 		
-	<!-- U S U A R I O S -->	
 	<permiso>
 		<accion>UsuarioAlta</accion>
 		<rol>ADMIN</rol>
 	</permiso>
+	
 	<permiso>
 		<accion>UsuarioMod</accion>
 		<rol>ADMIN</rol>
 	</permiso>	
+	
 	<permiso>
 		<accion>UsuarioBuscar</accion>
 		<rol>ADMIN</rol>
 	</permiso>
+	
 	<permiso>
 		<accion>UsuarioDel</accion>
 		<rol>ADMIN</rol>
 	</permiso>
 	
-	<!-- C E N T R A L -->	
-	<permiso>
-		<accion>CentralAlta</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>CentralBuscar</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>CentralBaja</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>CentralModificar</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>TecnologiaCentralAdmin</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>TecnologiaCentralRemove</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<!-- R E C O L E C T O R  F T P -->	
-	<permiso>
-		<accion>RecolectorFTPConf</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>SalidaPopupRecolectorFTP</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>RecoleccionAdmin</accion>
-		<rol>ADMIN</rol>		
-	</permiso>
-	<!-- P L A N T I L L A -->
-	<permiso>
-		<accion>PlantillaBaja</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>ValidadorDuplicadosConf</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>PlantillaConfiguracion</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>NodoPlantillaRemove</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>PlantillaAdmin</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>SalidaPopupValidadorDuplicados</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	
-	<!-- A C T I V I D A D -->	
-	<permiso>
-		<accion>ActividadBuscar</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>ActividadAdministracion</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>ActividadBaja</accion>
-		<rol>ADMIN</rol>
-	</permiso>	
-	
 	<!-- P L A N I F I C A C I O N  -->
+
 	<permiso>
 		<accion>PlanificacionBaja</accion>
 		<rol>ADMIN</rol>
 	</permiso>
+
 	<permiso>
 		<accion>PlanificacionConfiguracion</accion>
 		<rol>ADMIN</rol>
 	</permiso>
+
 	<permiso>
 		<accion>SalidaPopupPlanificacion</accion>
 		<rol>ADMIN</rol>
 	</permiso>
-	
-	<!-- H O S T -->
-	<permiso>
-		<accion>HostAlta</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>HostModificar</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>HostBaja</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>HostBuscar</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	
-	<!-- E N V I A D O R  F T P -->	
-	<permiso>
-		<accion>EnviadorFTPConf</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>SalidaPopupEnviadorFTP</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	
-	<!-- M O N I T O R E O  D E  T A R E A S -->
-	<permiso>
-		<accion>MonitoreoTareas</accion>
-		<rol>ADMIN</rol>
-		<rol>USUARIO</rol>
-	</permiso>		
-	
-	<!-- VISUALIZACION CIRCUITOS -->
-	<permiso>
-		<accion>VisualizacionCircuitos</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	
-	<!-- RECOLECCION -->
-	<permiso>
-		<accion>RecoleccionConf</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>LiberarCentral</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>RecoleccionDel</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>RecoleccionManualConf</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>LiberarCentralRecManual</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>RecoleccionEjecutarAhora</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	
-	<!-- ENVIO -->
-	<permiso>
-		<accion>EnvioAlta</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>EnvioBaja</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>EnvioBuscar</accion>
-		<rol>ADMIN</rol>
-	</permiso>	
-	<permiso>
-		<accion>EnvioManualConf</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	
-	<permiso>
-		<accion>LiberarFicheroEnvManual</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	
-	<!-- ADMINISTRACION DE RECOLECCIONES Y ENVIOS EN CURSO -->
-	<permiso>
-		<accion>AdministracionDeRecoleccionesYEnviosEnCurso</accion>
-		<rol>ADMIN</rol>
-	</permiso>	
-		<permiso>
-		<accion>CancelarTarea</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	
-	<!-- E S T A D I S T I C A S -->
-	<permiso>
-		<accion>EstTiempoEnvio</accion>
-		<rol>ADMIN</rol>
-	</permiso>	
-	<permiso>
-		<accion>EstTotalTicketsYFicheros</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>EstIntentosRecoleccionYEnvios</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>EstTicketsHistoricos</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	<permiso>
-		<accion>EstTicketsFaltantes</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	
-	<!-- D I A G N O S T I C O -->
-	
-	<permiso>
-		<accion>Diagnostico</accion>
-		<rol>ADMIN</rol>
-	</permiso>
-	
-	<!-- M O N I T O R E O  E N  T I E M P O  R E A L -->
-	<permiso>
-		<accion>MonitoreoTiempoReal</accion>
-		<rol>ADMIN</rol>
-	</permiso>
+
 </permisos>
 
 	
