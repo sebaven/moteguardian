@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application SYSTEM "ionix.dtd">
+<application>
+<i18n>
+	 <file language="es">config/site.properties</file>
+</i18n>
+<authentication type="bd"/>
+</application>
