@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <datasources>
 	<datasource>
-		<name>seekdispatch</name>
-		<base>srdfip</base>
+		<name>moteguardian</name>
+		<base>moteguardian</base>
 		<hostname>127.0.0.1</hostname>
 		<driver>mysql</driver>
 		<username>root</username>
