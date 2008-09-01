@@ -1,0 +1,213 @@
+-- phpMyAdmin SQL Dump
+-- version 2.9.1.1
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generación: 01-09-2008 a las 00:02:37
+-- Versión del servidor: 5.0.27
+-- Versión de PHP: 5.2.0
+-- 
+-- Base de datos: `moteguardian`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `dispositivo`
+-- 
+
+CREATE TABLE `dispositivo` (
+  `descripcion` text,
+  `id` bigint(11) NOT NULL auto_increment,
+  `id_sala` bigint(11) default NULL,
+  `estado` int(11) default NULL,
+  `codigo` varchar(50) default NULL,
+  `tipo` int(11) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `dispositivo`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `guardia`
+-- 
+
+CREATE TABLE `guardia` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `codigo_tarjeta` varchar(50) default NULL,
+  `nombre` varchar(255) default NULL,
+  `id_usuario` bigint(20) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `guardia`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `item_ronda`
+-- 
+
+CREATE TABLE `item_ronda` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `id_ronda` bigint(20) default NULL,
+  `id_sala` bigint(20) default NULL,
+  `duracion` int(11) default NULL,
+  `orden` int(11) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `item_ronda`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `log_alarma`
+-- 
+
+CREATE TABLE `log_alarma` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `id_dispositivo_disparador` bigint(20) default NULL,
+  `timestamp_inicio` timestamp NULL default NULL,
+  `timestamp_fin` timestamp NULL default NULL,
+  `es_falsa` tinyint(1) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `log_alarma`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `log_mota`
+-- 
+
+CREATE TABLE `log_mota` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `id_mota` bigint(20) default NULL,
+  `timestamp` timestamp NULL default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `log_mota`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `log_rfid`
+-- 
+
+CREATE TABLE `log_rfid` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `id_rfid` bigint(20) default NULL,
+  `timestamp_inicio` timestamp NULL default NULL,
+  `timestamp_fin` timestamp NULL default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `log_rfid`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `rol`
+-- 
+
+CREATE TABLE `rol` (
+  `id` smallint(6) NOT NULL auto_increment,
+  `descripcion` varchar(50) NOT NULL,
+  `baja_logica` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+-- 
+-- Volcar la base de datos para la tabla `rol`
+-- 
+
+INSERT INTO `rol` (`id`, `descripcion`, `baja_logica`) VALUES 
+(1, 'ADMINISTRADOR', 0),
+(2, 'GUARDIA', 0),
+(3, 'AUTORIDAD', 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `ronda`
+-- 
+
+CREATE TABLE `ronda` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `id_guardia` bigint(20) default NULL,
+  `id_planificacion` bigint(20) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `ronda`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `sala`
+-- 
+
+CREATE TABLE `sala` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `descripcion` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `sala`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `usuario`
+-- 
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL auto_increment,
+  `usuario` varchar(20) character set latin1 collate latin1_general_cs NOT NULL,
+  `clave` varchar(255) NOT NULL,
+  `nombre` varchar(30) default NULL,
+  `apellido` varchar(30) default NULL,
+  `email` varchar(50) default NULL,
+  `otros_mails` varchar(250) default NULL COMMENT 'Este campo es para agregar todos los mails que requieran aviso',
+  `telefono1` varchar(20) default NULL,
+  `telefono2` varchar(20) default NULL,
+  `id_rol` smallint(6) NOT NULL,
+  `baja_logica` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- 
+-- Volcar la base de datos para la tabla `usuario`
+-- 
+
+INSERT INTO `usuario` (`id`, `usuario`, `clave`, `nombre`, `apellido`, `email`, `otros_mails`, `telefono1`, `telefono2`, `id_rol`, `baja_logica`) VALUES 
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Admin', 'Admin', 'cgalli@cys.com.ar', NULL, NULL, NULL, 1, 0);
