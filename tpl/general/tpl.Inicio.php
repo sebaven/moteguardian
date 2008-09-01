@@ -5,7 +5,7 @@
 		<br>
 		<br>		
 		<h2 align="center" style="height: 80px;">
-			Bienvenido a SRDF
+			Bienvenido a MoteGuardian
 		</h2>
 		<div style="vertical-align: middle;">
 			<h4 align="center" style="vertical-align: middle;" >
