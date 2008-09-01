@@ -11,8 +11,7 @@ class UsuarioDel extends Action {
 		$usuario->baja_logica = 1;
 		
 		if ($usuario->update()) {
-			$nextAction->setNextAction("UsuarioBuscar", "eliminacion.usuario.ok");
-			Logger::register(BAJA_USUARIO_WEB,'Baja de usuario ' . $usuario->usuario);
+			$nextAction->setNextAction("UsuarioBuscar", "eliminacion.usuario.ok");			
 		}
 		else {
 			$nextAction->setNextAction("UsuarioBuscar", "eliminacion.usuario.error",array(error => "1"));	

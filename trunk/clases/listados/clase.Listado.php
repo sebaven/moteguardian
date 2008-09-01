@@ -1,5 +1,6 @@
 <?
-class Listado {
+class Listado 
+{
 	var $id;
 	var $debug;
 	var $formato_fecha;
@@ -16,15 +17,15 @@ class Listado {
 	var $seleccionar_js = '';
 	var $mensaje = "No se hallaron datos para su b&uacute;squeda.";
 	var $orden = "orden";		
-	var $_conexion = 'seekdispatch';		
+	var $_conexion = 'moteguardian';		
 	//Propiedades referentes a la muestra del total de registros
 	var $mostrar_total = false;
 	var $total_registros = 0;
 	var $mensaje_total = 'Total de Registros: ';
 		
 	function Listado($valor_debug = 0)
-	{
-		$this->db = ConnectionManager::getConnection($this->_conexion);
+	{			
+		$this->db = ConnectionManager::getConnection($this->_conexion);		
 		$this->formato_fecha = "y-m-d";
 		$this->debug = $valor_debug;
 		$this->db->debug = $this->debug;

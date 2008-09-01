@@ -110,7 +110,6 @@ class UsuarioAlta extends Action {
 	{
 		if ($this->guardarUsuario()){
 			$nextAction->setNextAction('UsuarioAlta', 'alta.usuario.ok');
-			Logger::register(ALTA_USUARIO_WEB,'Alta de usuario ' . $_POST['usuario']);
 		}
 		else{
 			$nextAction->setNextAction('UsuarioAlta', 'alta.usuario.error',array(error => "1"));

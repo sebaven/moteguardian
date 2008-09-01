@@ -25,4 +25,6 @@
 	</fieldset>
 </form>
 <br/>
+<br/>
 <?= $listado ?>
+<br/>
