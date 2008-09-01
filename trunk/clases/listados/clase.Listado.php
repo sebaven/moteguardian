@@ -1,4 +1,4 @@
-	<?
+<?
 class Listado {
 	var $id;
 	var $debug;
