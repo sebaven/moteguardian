@@ -1,12 +1,12 @@
 <?
-class Guardia extends AbstractEntity
+class Dispositivo extends AbstractEntity
 {
     /**
      * Nombre de la tabla sobre a la cual accede la clase
      * @access protected
      * @var string
      */
-    var $_tablename = 'guardia';
+    var $_tablename = 'dispositivo';
 
     /**
      * Nombre de los campos, menos el campo id
@@ -15,11 +15,11 @@ class Guardia extends AbstractEntity
      */
     var $_fields = array
     (		    
-		'descripcion' 		=> 'varchar',	
-		'id_sala' 			=> 'int',
-		'estado' 			=> 'int',
-		'codigo_tarjeta'	=> 'varchar',	
-    	'tipo' 				=> 'int'      
+		'descripcion' 	=> 'varchar',	
+		'id_sala' 		=> 'int',
+		'estado' 		=> 'int',
+		'codigo' 		=> 'varchar',	
+    	'tipo' 			=> 'int'      
     );
 
     var $id;
