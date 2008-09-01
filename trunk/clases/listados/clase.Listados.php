@@ -1,32 +1,6 @@
 <? 
-include_once BASE_DIR ."clases/listados/clase.ListadoAuditoria.php";
 include_once BASE_DIR ."clases/listados/clase.ListadoUsuarios.php";
 include_once BASE_DIR ."clases/listados/clase.ListadoPlanificacion.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoCentrales.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoActividad.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoPlantillas.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoTareas.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoPlanificacionEnvio.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoTecnologiaCentral.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoCentralesAsignadasARecoleccion.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoCentralesAsignadasARecoleccionManual.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoCentralesParaSeleccionar.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoHosts.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoRecolecciones.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoEnvios.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoFicherosAsignadosAEnvioManual.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoFicherosParaSeleccionar.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoRecoleccionesConFallas.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoEnviosConFallas.php";
-
-include_once BASE_DIR ."clases/listados/clase.ListadoEstIntentosRecoleccion.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoEstIntentosEnvio.php";
-
-include_once BASE_DIR ."clases/listados/clase.ListadoEstTotalTickets.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoEstTotalFicheros.php";
-
-include_once BASE_DIR ."clases/listados/clase.ListadoMonitoreoEnvioTiempoReal.php";
-include_once BASE_DIR ."clases/listados/clase.ListadoMonitoreoRecoleccionTiempoReal.php";
 
 class Listados
 {		
