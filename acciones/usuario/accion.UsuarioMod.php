@@ -76,8 +76,7 @@ class UsuarioMod extends Action {
 
 		$params["id"] = $usuario->id;
 		if ($usuario->update()){
-			$nextAction->setNextAction("UsuarioMod", "modificacion.usuario.ok", $params);
-			Logger::register(MODIFICACION_USUARIO_WEB, 'Modificacion de usuario ' . $usuario->usuario);
+			$nextAction->setNextAction("UsuarioMod", "modificacion.usuario.ok", $params);			
 		}
 		else{
 			$params['error'] = "1";

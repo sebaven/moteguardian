@@ -55,7 +55,7 @@ class ConnectionManager
 			}
 		}
 		
-		return $connections[$name];		
+		return $connections[$name];				
 	}
 
 	/**
