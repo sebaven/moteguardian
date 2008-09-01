@@ -4,71 +4,57 @@
 	
 	<permiso>
 		<accion>Login</accion>
-		<rol>ADMIN</rol>
-		<rol>USUARIO</rol>
+		<rol>ADMINISTRADOR</rol>		
 	</permiso>
-	
 	<permiso>
 		<accion>Logout</accion>
-		<rol>ADMIN</rol>
-		<rol>USUARIO</rol>
+		<rol>ADMINISTRADOR</rol>		
 	</permiso>
-	
 	<permiso>
-		<accion>Inicio</accion>
-		<rol>USUARIO</rol>
-		<rol>ADMIN</rol>
+		<accion>Inicio</accion>		
+		<rol>ADMINISTRADOR</rol>
 	</permiso>
-	
 	<permiso>
 		<accion>CambiarPassword</accion>
-		<rol>ADMIN</rol>
-		<rol>USUARIO</rol>
+		<rol>ADMINISTRADOR</rol>		
 	</permiso>
-	
 	<permiso>
 		<accion>PermisoDenegado</accion>
-		<rol>ADMIN</rol>
-		<rol>USUARIO</rol>
+		<rol>ADMINISTRADOR</rol>
 	</permiso>	
 	
 	<!-- U S U A R I O S -->
 		
 	<permiso>
 		<accion>UsuarioAlta</accion>
-		<rol>ADMIN</rol>
+		<rol>ADMINISTRADOR</rol>
 	</permiso>
-	
 	<permiso>
 		<accion>UsuarioMod</accion>
-		<rol>ADMIN</rol>
+		<rol>ADMINISTRADOR</rol>
 	</permiso>	
-	
 	<permiso>
 		<accion>UsuarioBuscar</accion>
-		<rol>ADMIN</rol>
+		<rol>ADMINISTRADOR</rol>
 	</permiso>
-	
 	<permiso>
 		<accion>UsuarioDel</accion>
-		<rol>ADMIN</rol>
+		<rol>ADMINISTRADOR</rol>
 	</permiso>
 	
 	<!-- P L A N I F I C A C I O N  -->
 
 	<permiso>
 		<accion>PlanificacionBaja</accion>
-		<rol>ADMIN</rol>
+		<rol>ADMINISTRADOR</rol>
 	</permiso>
-
 	<permiso>
 		<accion>PlanificacionConfiguracion</accion>
-		<rol>ADMIN</rol>
+		<rol>ADMINISTRADOR</rol>
 	</permiso>
-
 	<permiso>
 		<accion>SalidaPopupPlanificacion</accion>
-		<rol>ADMIN</rol>
+		<rol>ADMINISTRADOR</rol>
 	</permiso>
 
 </permisos>
