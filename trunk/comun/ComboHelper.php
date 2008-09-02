@@ -59,6 +59,11 @@ function ComboDias()
 								CONST_DIA_DOMINGO => CONST_DIA_DOMINGO);
 	return $luegoTransferencia;		
 }
-
-
+    
+function ComboTipoDispositivo()
+{
+    return array("Camara" => "Cámara",
+                "LectorRFID" => "Lector RFID".
+                "Mota" => "Sensor Mota de Polvo");
+}
 ?>
