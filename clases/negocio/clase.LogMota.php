@@ -16,11 +16,13 @@ class LogMota extends AbstractEntity
     var $_fields = array
     (				
 		'id_mota'	=> 'int',
-		'timestamp'	=> 'varchar'
+		'timestamp_inicio'	=> 'varchar',
+		'timestamp_fin'	=> 'varchar'
     );
 
     var $id;
     var $id_mota;
-    var $timestamp;    
+    var $timestamp_inicio;    
+    var $timestamp_fin;    
 }
 ?>
