@@ -15,7 +15,6 @@ class UsuarioDAO extends AbstractDAO
 	* @param $values (array asociativo) contiene como clave los campos a filtrar con los respectivos valores
 	* @return (string) sentencia SQL
 	*/
-	
 	function getSql($values = '')
 	{
 		$w = array();
