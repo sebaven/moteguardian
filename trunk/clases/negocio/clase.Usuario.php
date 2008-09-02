@@ -16,7 +16,7 @@ class Usuario extends AbstractEntity
 	/// @var array
 	var $_fields = array
 	(
-		'usuario' 	 => 'varchar',
+		'usuario' => 'varchar',
 		'clave' => 'varchar',
 		'nombre' => 'varchar',
 		'apellido' => 'varchar',

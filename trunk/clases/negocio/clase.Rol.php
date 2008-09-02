@@ -16,9 +16,11 @@ class Rol extends AbstractEntity
 	var $_fields = array
 	(
 		'descripcion' => 'varchar',
+        'baja_logica' => 'int'
 	);
 
 	var $id;
 	var $descripcion;
+    var $baja_logica;   
 }
 ?>

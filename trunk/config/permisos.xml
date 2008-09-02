@@ -63,6 +63,13 @@
 		<accion>SalaSelect</accion>
 		<rol>ADMINISTRADOR</rol>
 	</permiso>
+    
+    <!-- SALA -->
+    
+    <permiso>
+        <accion>DispositivoAlta</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>
 </permisos>
 
 	

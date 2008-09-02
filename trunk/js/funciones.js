@@ -123,3 +123,21 @@ function agregarPlanificacion(id, aquien)
 		popup("ConfiguracionPlanificacion",url,'600','500');
 	}
 }
+
+/*------------------------------------------------------------
+ * Usuarios
+ ------------------------------------------------------------*/
+
+function seleccionarDispositivo(id) 
+{
+    location.href = 'index.php?accion=dispositivo_mod&id=' + id;
+}
+
+
+function borrarDispositivo(id) 
+{
+    var res = confirm('¿Borrar el Dispositivo\?')
+    
+    if (res)
+        location.href = 'index.php?accion=dispositivo_del&btnProcesar=1&id=' + id;
+}

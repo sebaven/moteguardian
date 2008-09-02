@@ -19,7 +19,8 @@ class Dispositivo extends AbstractEntity
 		'id_sala' 		=> 'int',
 		'estado' 		=> 'int',
 		'codigo' 		=> 'varchar',	
-    	'tipo' 			=> 'int'      
+    	'tipo' 			=> 'int',   
+        'baja_logica' => 'int'    
     );
 
     var $id;
@@ -28,5 +29,6 @@ class Dispositivo extends AbstractEntity
     var $estado;
     var $codigo;
     var $tipo;
+    var $baja_logica;
 }
 ?>

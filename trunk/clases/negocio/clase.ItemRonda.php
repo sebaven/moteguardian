@@ -18,7 +18,8 @@ class ItemRonda extends AbstractEntity
 		'id_ronda' 		=> 'int',
 		'id_sala' 		=> 'int',
 		'duracion' 		=> 'int',			
-    	'orden' 		=> 'int'      
+    	'orden' 		=> 'int',
+        'baja_logica'   => 'int'     
     );
 
     var $id;    
@@ -26,5 +27,6 @@ class ItemRonda extends AbstractEntity
     var $id_ronda;
     var $orden;
     var $duracion;
+    var $baja_logica;       
 }
 ?>

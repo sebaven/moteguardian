@@ -17,12 +17,14 @@ class Guardia extends AbstractEntity
     (	   
 		'id_usuario'		=> 'int',
 		'nombre' 			=> 'varchar',
-		'codigo_tarjeta'	=> 'varchar'    	      
+		'codigo_tarjeta'	=> 'varchar',   	
+        'baja_logica'       => 'int'     
     );
 
     var $id;
     var $nombre;
     var $id_usuario;
     var $codigo_tarjeta;    
+    var $baja_logica;
 }
 ?>

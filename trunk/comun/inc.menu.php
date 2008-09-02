@@ -31,6 +31,16 @@
 	</ul>
 </div>
 
+<!--  MENU DISPOSITIVOS -->
+
+<div class="silverheader"><a href="#">Dispositivos</a></div>
+<div class="submenu">
+    <ul>
+        <? if (RegistryHelper::getRolUsuario()->id==ROL_ID_ADMINISTRADOR) {?>
+        <li><a href="index.php?accion=dispositivo_new">Alta</a></li>
+        <? } ?>
+    </ul>
+</div>
 
 
 </div>
