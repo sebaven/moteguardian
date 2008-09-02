@@ -38,10 +38,11 @@
     <ul>
         <? if (RegistryHelper::getRolUsuario()->id==ROL_ID_ADMINISTRADOR) {?>
         <li><a href="index.php?accion=dispositivo_new">Alta</a></li>
+        <li><a href="index.php?accion=dispositivo_adm">Administraci&oacute;n</a></li>
         <? } ?>
     </ul>
 </div>
 
-
+                          
 </div>
 <?}?>

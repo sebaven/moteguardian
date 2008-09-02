@@ -12,7 +12,7 @@
           <tr>
             <td align="right"><p>Tipo</p></td>
             <td><select name="id_tipo" id="id_tipo">
-                <? ComboControl::Display($options_tipo, $id_tipo)?>
+                <? ComboControl::Display($options_tipo, $tipo)?>
               </select>            </td>
             <td align="right"><p>Estado</p></td>
             <td><input type="text" name="estado" size="25" value="<?= htmlentities($estado) ?>"/></td>
