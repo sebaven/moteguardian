@@ -91,5 +91,13 @@
 		<modulo>planificacion</modulo>
 		<clase>SalidaPopupPlanificacion</clase>
 	</accion>
+	
+	<!--  S A L A -->
 		
+	<accion>
+		<nombre>SalaSelect</nombre>
+		<link>sala_select</link>
+		<modulo>Sala</modulo>
+		<clase>SalaSelect</clase>
+	</accion>
 </acciones>	
