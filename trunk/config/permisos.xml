@@ -1,6 +1,6 @@
 <permisos>
 
-	<!-- GENERAL -->
+	<!-- G E N E R A L  -->
 	
 	<permiso>
 		<accion>Login</accion>
@@ -57,6 +57,12 @@
 		<rol>ADMINISTRADOR</rol>
 	</permiso>
 
+	<!-- SALA -->
+	
+	<permiso>
+		<accion>SalaSelect</accion>
+		<rol>ADMINISTRADOR</rol>
+	</permiso>
 </permisos>
 
 	
