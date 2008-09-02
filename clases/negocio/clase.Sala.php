@@ -1,5 +1,5 @@
 <?
-class ItemRonda extends AbstractEntity
+class Sala extends AbstractEntity
 {
     /**
      * Nombre de la tabla sobre a la cual accede la clase
@@ -15,10 +15,12 @@ class ItemRonda extends AbstractEntity
      */
     var $_fields = array
     (				
-		'descripcion' => 'varchar'      
+		'descripcion' => 'varchar',
+        'baja_logica' => 'int'
     );
 
     var $id;    
     var $descripcion;
+    var $baja_logica;   
 }
 ?>

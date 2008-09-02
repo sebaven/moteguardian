@@ -16,6 +16,7 @@ class Log extends AbstractEntity
       'parametro' => 'varchar',
 	  'fecha' => 'date',
 	  'hora' => 'date',
+      'baja_logica' => 'int'
     );
 
     var $id;
@@ -24,6 +25,7 @@ class Log extends AbstractEntity
     var $parametro;
     var $fecha;
 	var $hora;
+    var $baja_logica;   
 	
 	/// Devuelve true si el caracter pasado por parametro es un numero (0 - 9)
 	/// o false en caso contrario

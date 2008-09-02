@@ -18,7 +18,8 @@ class LogAlarma extends AbstractEntity
 		'id_dispositivo_disparador'	=> 'int',
 		'timestamp_inicio'		 	=> 'varchar',
 		'timestamp_fin'		 		=> 'varchar',			
-    	'es_falsa' 					=> 'bool'      
+    	'es_falsa' 					=> 'bool',     
+        'baja_logica' => 'int'
     );
 
     var $id;    
@@ -26,5 +27,7 @@ class LogAlarma extends AbstractEntity
     var $timestamp_inicio;
     var $timestamp_fin;
     var $es_false;
+    var $baja_logica;   
+
 }
 ?>

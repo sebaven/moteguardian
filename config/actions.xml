@@ -92,12 +92,21 @@
 		<clase>SalidaPopupPlanificacion</clase>
 	</accion>
 	
-	<!--  S A L A -->
-		
-	<accion>
-		<nombre>SalaSelect</nombre>
-		<link>sala_select</link>
-		<modulo>Sala</modulo>
-		<clase>SalaSelect</clase>
-	</accion>
+    <!--  S A L A -->
+        
+    <accion>
+        <nombre>SalaSelect</nombre>
+        <link>sala_select</link>
+        <modulo>Sala</modulo>
+        <clase>SalaSelect</clase>
+    </accion>
+
+    <!--  D I S P O S I T I V O S -->
+        
+    <accion>
+        <nombre>DispositivoAlta</nombre>
+        <link>dispositivo_new</link>
+        <modulo>Dispositivo</modulo>
+        <clase>DispositivoAlta</clase>
+    </accion>
 </acciones>	

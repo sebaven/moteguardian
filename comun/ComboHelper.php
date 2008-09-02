@@ -1,7 +1,7 @@
 <?
 include_once BASE_DIR ."clases/dao/dao.Usuario.php";
-include_once BASE_DIR ."clases/dao/dao.Rol.php";
-
+include_once BASE_DIR ."clases/dao/dao.Rol.php";   
+include_once BASE_DIR ."clases/dao/dao.Sala.php";   
 
 
 function ComboUsuario($first=true,$text='')
@@ -62,8 +62,14 @@ function ComboDias()
     
 function ComboTipoDispositivo()
 {
-    return array("Camara" => "Cámara",
-                "LectorRFID" => "Lector RFID".
-                "Mota" => "Sensor Mota de Polvo");
+    return array(0 => "Cámara",
+                1 => "Lector RFID",
+                2 => "Sensor Mota de Polvo");
+}
+
+function ComboSala($first=true,$text='')
+{    
+    $salaDAO = new SalaDAO();
+    return PresentationUtil::getCombo($salaDAO->getAll("descripcion"), "descripcion",$first,$text);
 }
 ?>
