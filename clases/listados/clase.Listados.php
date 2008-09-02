@@ -1,6 +1,7 @@
 <? 
 include_once BASE_DIR ."clases/listados/clase.ListadoUsuarios.php";
 include_once BASE_DIR ."clases/listados/clase.ListadoPlanificacion.php";
+include_once BASE_DIR ."clases/listados/clase.ListadoDispositivos.php";
 
 class Listados
 {		

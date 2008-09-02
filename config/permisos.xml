@@ -70,6 +70,18 @@
         <accion>DispositivoAlta</accion>
         <rol>ADMINISTRADOR</rol>
     </permiso>
+    <permiso>
+        <accion>DispositivoAdm</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>
+    <permiso>
+        <accion>DispositivoDel</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>
+    <permiso>
+        <accion>DispositivoMod</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>
 </permisos>
 
 	
