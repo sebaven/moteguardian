@@ -99,7 +99,8 @@ CREATE TABLE `log_alarma` (
 CREATE TABLE `log_mota` (
   `id` bigint(20) NOT NULL auto_increment,
   `id_mota` bigint(20) default NULL,
-  `timestamp` timestamp NULL default NULL,
+  `timestamp_inicio` timestamp NULL default NULL,
+  `timestamp_fin` timestamp NULL default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
