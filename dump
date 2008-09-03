@@ -22,7 +22,8 @@ CREATE TABLE `dispositivo` (
   `id_sala` bigint(11) default NULL,
   `estado` int(11) default NULL,
   `codigo` varchar(50) default NULL,
-  `tipo` int(11) default NULL COMMENT '0=MOTA;1=RFID;2=CAMARA',
+  `tipo` int(11) default NULL COMMENT '2=MOTA;1=RFID;0=CAMARA',
+  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
   PRIMARY KEY  (`id`)
 ) ;
 
@@ -42,6 +43,7 @@ CREATE TABLE `guardia` (
   `codigo_tarjeta` varchar(50) default NULL,
   `nombre` varchar(255) default NULL,
   `id_usuario` bigint(20) default NULL,
+  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
   PRIMARY KEY  (`id`)
 ) ;
 
@@ -62,6 +64,7 @@ CREATE TABLE `item_ronda` (
   `id_sala` bigint(20) default NULL,
   `duracion` int(11) default NULL,
   `orden` int(11) default NULL,
+  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
   PRIMARY KEY  (`id`)
 );
 
@@ -82,6 +85,7 @@ CREATE TABLE `log_alarma` (
   `timestamp_inicio` timestamp NULL default NULL,
   `timestamp_fin` timestamp NULL default NULL,
   `es_falsa` tinyint(1) default NULL,
+  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
   PRIMARY KEY  (`id`)
 ) ;
 
@@ -101,6 +105,7 @@ CREATE TABLE `log_mota` (
   `id_mota` bigint(20) default NULL,
   `timestamp_inicio` timestamp NULL default NULL,
   `timestamp_fin` timestamp NULL default NULL,
+  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
   PRIMARY KEY  (`id`)
 ) ;
 
@@ -121,6 +126,7 @@ CREATE TABLE `log_rfid` (
   `timestamp_inicio` timestamp NULL default NULL,
   `timestamp_fin` timestamp NULL default NULL,
   `codigo_tarjeta` VARCHAR( 50 ) NOT NULL,
+  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
   PRIMARY KEY  (`id`)
 );
 
@@ -140,6 +146,7 @@ CREATE TABLE `rol` (
   `id` smallint(6) NOT NULL auto_increment,
   `descripcion` varchar(50) NOT NULL,
   `baja_logica` tinyint(1) default '0',
+  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
   PRIMARY KEY  (`id`)
 )  ;
 
@@ -162,6 +169,7 @@ CREATE TABLE `ronda` (
   `id` bigint(20) NOT NULL auto_increment,
   `id_guardia` bigint(20) default NULL,
   `id_planificacion` bigint(20) default NULL,
+  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
   PRIMARY KEY  (`id`)
 ) ;
 
@@ -179,6 +187,7 @@ CREATE TABLE `ronda` (
 CREATE TABLE `sala` (
   `id` bigint(20) NOT NULL auto_increment,
   `descripcion` varchar(255) default NULL,
+  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
   PRIMARY KEY  (`id`)
 ) ;
 
