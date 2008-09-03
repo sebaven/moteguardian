@@ -12,40 +12,35 @@ class DispositivoDAO extends AbstractDAO
     {
         $w = array();
         
-/*        if ($values['usuario'])
-            $w[] = "usuario LIKE '%" . addslashes($values['usuario']) . "%'";
+        if($values['descripcion']){
+            $w[] = "descripcion LIKE '%".addEscapeosParaLike($values['usuario'])."%'";        	
+        }
             
-        if ($values['nombre'])
-            $w[] = "nombre = '" . addslashes($values['nombre']) . "'";
+        if($values['id_sala']){
+            $w[] = "id_sala = '".addslashes($values['id_sala'])."'";
+        }
             
-        if ($values['apellido'])
-            $w[] = "apellido = '" . addslashes($values['apellido']) . "'";
-            
-        if ($values['email'])
-            $w[] = "email = '" . addslashes($values['email']) . "'";
-            
-        if ($values['otros_mails'])
-            $w[] = "otros_mails = '" . addslashes($values['otros_mails']) . "'";
-            
-        if ($values['telefono1'])
-            $w[] = "telefono1 = '" . addslashes($values['telefono1']) . "'";
+        if($values['tipo']){
+            $w[] = "tipo = '".addslashes($values['tipo'])."'";
+        }
         
-        if ($values['telefono2'])
-            $w[] = "telefono2 = '" . addslashes($values['telefono2']) . "'";
+        if($values['estado']){
+            $w[] = "estado LIKE '%".addEscapeosParaLike($values['estado'])."%'";
+        }
             
-        if ($values['id_rol'])
-            $w[] = "id_rol = '" . addslashes($values['id_rol']) . "'";
-  */                  
+        if($values['codigo']){
+            $w[] = "codigo LIKE '%".addEscapeosParaLike($values['codigo'])."%'";
+        }
+                      
         $w[] = "d.baja_logica = '".FALSE_."'";
             
         $sql  = "SELECT d.id, ";
         $sql .= "       d.codigo, ";
         $sql .= "       d.tipo,";
         $sql .= "       d.descripcion,";
-        $sql .= "       d.id_sala as sala,";
+        $sql .= "       d.id_sala,";
         $sql .= "       d.estado ";
         $sql .= "FROM dispositivo d ";
-        //$sql .= "INNER JOIN rol ON rol.id = u.id_rol ";        
 
         if ($w)
         {

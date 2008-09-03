@@ -10,47 +10,20 @@ class DispositivoMod extends Action {
 	var $tpl = "tpl/dispositivo/tpl.DispositivoAlta.php";
 
 	function inicializar() {
-
 		// Titulo del template
 		$this->asignar('accion_dispositivos', "Modificaci&oacute;n");
 		
-		// Cargar los datos del Dispositivo
+ 
 		$dispositivo = new Dispositivo(intval($_GET['id']));
 
+		// Cargo los datos del dispositivo en la pantalla
 		$this->asignarArray($dispositivo->toArray());
 
-        // Tipos de Dispositivo
+        // Cargo los combos
         $this->asignar('options_tipo', ComboTipoDispositivo());
         $this->asignar('options_sala', ComboSala());
+        $this->asignar('options_estado', ComboEstadoDispositivo());
 	}
-
-
-	/*function validar(&$v) {
-		
-		$v->add(new Required('usuario', 'usuario.required'));
-		$v->add(new Required('id_rol', 'rol.required'));
-		
-		// Se valida que el password nuevo que eligio no sea igual al password que
-		// tenia anteriormente
-		// Se obtiene el usuario
-		$usuario = new Usuario($_GET['id']);
-
-		if (!$usuario->validarPasswordRepetido($_POST['clave'])){
-			
-			$v->add(new ShowError('password.repeat'));
-		}
-		
-		// Se valida que la nueva clave tenga mas de 8 caracteres
-		if ($_POST['clave']){
-			$v->add(new Condition(strlen($_POST['clave']) >= 8,'cambiarPassword.passConfirm.length'));
-			$v->add(new Condition(strlen($_POST['clave']) <= 255,'cambiarPassword.passConfirm.length'));
-		}
-		
-		if ((strstr($_POST['email'], ";")) || (strstr($_POST['otros_mails'], ";"))){
-			
-			$v->add(new ShowError('caracteres.incorrectos'));
-		}
-	}     */
 
 
 	function procesar(&$nextAction){
