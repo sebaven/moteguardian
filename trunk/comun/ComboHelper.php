@@ -59,17 +59,31 @@ function ComboDias()
 								CONST_DIA_DOMINGO => CONST_DIA_DOMINGO);
 	return $luegoTransferencia;		
 }
-    
+
+
 function ComboTipoDispositivo()
 {
-    return array(0 => "Cámara",
-                1 => "Lector RFID",
-                2 => "Sensor Mota de Polvo");
+    return array(	
+    	0 				=> "Seleccione un tipo de dispositivo...",
+		CONST_RFID 		=> "Lector RFID",
+		CONST_MOTA 		=> "Sensor Mota de Polvo",
+		CONST_CAMARA 	=> "Cámara");
 }
 
-function ComboSala($first=true,$text='')
-{    
+
+function ComboEstadoDispositivo()
+{
+	return array(	
+    	0 				=> "Seleccione un estado...",
+		CONST_AVERIADO 	=> "Averiado",
+		CONST_NUEVO 	=> "Nuevo",
+		CONST_EN_ALARMA => "En alarma",
+		CONST_EN_USO 	=> "En uso");
+}
+
+
+function ComboSala($first=true, $text='Seleccione una sala...'){    
     $salaDAO = new SalaDAO();
-    return PresentationUtil::getCombo($salaDAO->getAll("descripcion"), "descripcion",$first,$text);
+    return PresentationUtil::getCombo($salaDAO->getAll("descripcion"), "descripcion", $first, $text);
 }
 ?>

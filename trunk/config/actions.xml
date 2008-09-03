@@ -109,22 +109,26 @@
         <modulo>Dispositivo</modulo>
         <clase>DispositivoAlta</clase>
     </accion>
+    
     <accion>
         <nombre>DispositivoAdm</nombre>
         <link>dispositivo_adm</link>
         <modulo>Dispositivo</modulo>
         <clase>DispositivoAdm</clase>
     </accion>
+    
     <accion>
         <nombre>DispositivoDel</nombre>
         <link>dispositivo_del</link>
         <modulo>Dispositivo</modulo>
         <clase>DispositivoDel</clase>
     </accion>
-        <accion>
+    
+	<accion>
         <nombre>DispositivoMod</nombre>
         <link>dispositivo_mod</link>
         <modulo>Dispositivo</modulo>
         <clase>DispositivoMod</clase>
     </accion>
+    
 </acciones>	

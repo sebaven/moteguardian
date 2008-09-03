@@ -1,5 +1,5 @@
 <?
-include_once BASE_DIR ."clases/listados/clase.Listados.php";
+include_once BASE_DIR."clases/listados/clase.Listados.php";
 
 class DispositivoAdm extends Action
 {
@@ -7,18 +7,20 @@ class DispositivoAdm extends Action
 
 	function inicializar()
 	{
-		// Roles
-		$this->asignar('options_rol', ComboRol(true));
+		// Cargo los combos
+        $this->asignar('options_tipo', ComboTipoDispositivo());
+        $this->asignar('options_estado', ComboEstadoDispositivo());
+        $this->asignar('options_sala', ComboSala());        
 	}
 
+	
 	function buscar()
 	{
-		// Cargar Datos de la Busqueda
+		// Recargo los datos en pantalla para que se sepa que busqué
 		$this->asignarArray($_GET);
 
 		$listado = Listados::create('ListadoDispositivos', $_GET);
 		$this->asignar("listado", $listado->imprimir_listado());
-	}
-	
+	}	
 }
 ?>

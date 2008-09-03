@@ -8,34 +8,30 @@ class ListadoDispositivos extends Listado
 	{
 		parent::Listado();
 
-		// Cargar la consulta para el listado
-		$dispositivo = new DispositivoDAO();
-		$sql = $dispositivo->getSql($params);
+		$this->mensaje = "La b&uacute;squeda no ha encontrado resultados";
 				
-		if($params){
-			$this->mensaje = "No existen usuarios que cumplan con las condiciones de búsqueda especificadas";
-		} else {
-			$this->mensaje = "No existen Usuarios";	
-		}
-		
 		$this->orden = "orden";
 		$this->ex_pasaget = array("orden");
-		$cfilas = "5";
-		$maxpag = "5";
 		$this->mostrar_total = true;
 		$this->titulo_general= "";
-		$this->mensaje_total = 'Total de Dispositivos: ';
+		$this->mensaje_total = 'Cantidad total de Dispositivos: ';
+		$this->seleccionar_js = "";
+		
+		$dispositivo = new DispositivoDAO();
+		
+		$sql = $dispositivo->getSql($params);		
 		$order_default = "codigo";
 		$orden_tipo = "asc";
-		$this->seleccionar_js = "";
+		$cfilas = "5";
+		$maxpag = "5";
 
 		// Columnas
 		$columnas["TipoDispositivo"] = array("nombre" =>"Tipo de Dispositivo",
         	                   	"title" =>"Tipo de Dispositivo",
             	                "dato_align" =>"left",
-                	            "datos" =>array("tipo"),
-                    	        "orden" =>"tipo",
+                    	        "orden" => "tipo",
                         	    "fijo" =>false,
+                	            "dato_tipo_dispositivo" => "tipo",
 								"dato_width" => "10%");
 
 		$columnas["Codigo"] = array("nombre" =>"Codigo",
@@ -49,8 +45,8 @@ class ListadoDispositivos extends Listado
 		$columnas["Sala"] = array("nombre" =>"Sala",
 		      	                "title" =>"Sala",
 		          	            "dato_align" =>"left",
-		              	        "datos" =>array("sala"),
-		                  	    "orden" =>"sala",
+		              	        "datos" =>array("id_sala"),
+		                  	    "orden" =>"id_sala",
 		                      	"fijo" =>false,
 								"dato_width" => "10%");
 								
@@ -65,7 +61,7 @@ class ListadoDispositivos extends Listado
 		$columnas["Estado"] = array("nombre" =>"Estado",
 		      	                "title" =>"Estado",
 		          	            "dato_align" =>"left",
-		              	        "datos" =>array("estado"),
+		              	        "dato_estado_dispositivo" => "estado",
 		                  	    "orden" =>"estado",
 		                      	"fijo" =>false,
 								"dato_width" => "10%");
@@ -77,7 +73,7 @@ class ListadoDispositivos extends Listado
 								"dato_href_parametro"=>"id",
 								"dato_onclick" => "seleccionarDispositivo(id)",
 								"dato_align"=>"center",				
-								"dato_title"=>"editar Usuario",
+								"dato_title"=>"editar dispositivo",
 								"dato_width" => "5%",
 						   		"dato_foto"=>"imagenes/editar.png");
 
@@ -87,12 +83,15 @@ class ListadoDispositivos extends Listado
 								"dato_href_parametro"=>"id",
 								"dato_onclick" => "borrarDispositivo(id)",
 								"dato_align"=>"center",				
-								"dato_title"=>"Eliminar Usuario",
+								"dato_title"=>"Eliminar dispositivo",
 								"dato_width" => "5%",
 						   		"dato_foto"=>"imagenes/eliminar.png");
-																	
+
+		// Agrego los datos del get para el paginado
+		$params += $_GET;
+		
 		// Cargar parametros
-		$this->datos($sql, $_GET, $columnas, $cfilas, $maxpag, $order_default, $orden_tipo);
+		$this->datos($sql, $params, $columnas, $cfilas, $maxpag, $order_default, $orden_tipo);
 	}
 }
 ?>

@@ -236,17 +236,38 @@ class Listado
 								$a2="</a>";
 							}
                                         
-                                        if($valor["dato_foto_variable"]){                                        	
-                                        	if(isset($row[$valor['dato_foto_variable']])) {
-                                        		if($row[$valor['dato_foto_variable']]==TRUE_){                                        			
-                                        			$img ="<img src='imagenes/listado/exitoTarea/true.png"."' border='0' align='absmiddle'>";
-                                        		} else if($row[$valor['dato_foto_variable']]==FALSE_){
-                                        			$img ="<img src='imagenes/listado/exitoTarea/false.png' border='0' align='absmiddle'>";	
-                                        		} 
-                                        	} else {                                        		
-                                                $img ="<img src='imagenes/listado/exitoTarea/null.png' border='0' align='absmiddle'>";
-                                        	}
-                                        }
+							if($valor["dato_estado_dispositivo"]){                                        	
+								switch ($row['estado'])
+								{
+									case CONST_AVERIADO:
+										$img ="<img src='imagenes/amarillo.png"."' border='0' align='absmiddle' width='15px'>";
+										break;
+									case CONST_NUEVO:
+										$img ="<img src='imagenes/azul.png"."' border='0' align='absmiddle' width='15px'>";	
+								 		break;
+									case CONST_EN_USO:
+										$img ="<img src='imagenes/verde.png"."' border='0' align='absmiddle' width='15px'>";
+										break;
+									case CONST_EN_ALARMA:
+										$img ="<img src='imagenes/rojo.png"."' border='0' align='absmiddle' width='15px'>"; 
+										break;
+								}
+							}
+							
+							if($valor["dato_tipo_dispositivo"]){                                        	
+								switch ($row['tipo'])
+								{
+									case CONST_RFID:
+										$dato = "Sensor RFID";
+										break;
+									case CONST_MOTA:
+										$dato = "Mota de polvo";	
+								 		break;
+									case CONST_CAMARA:
+										$dato = "Cámara";
+										break;									
+								}
+							}							
                                         
 							if($valor["dato_foto"]) {
 								$img ="<img src='".$valor['dato_foto']."' border='0' align='absmiddle'>";

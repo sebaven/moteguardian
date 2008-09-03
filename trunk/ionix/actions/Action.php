@@ -182,7 +182,7 @@ class Action
 		{
 			foreach ($data as $key => $value)
 			{
-				$this->values[$key] = $value;
+				$this->values[$key] = trim($value);
 			}
 		}
 	}
