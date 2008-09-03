@@ -22,7 +22,7 @@ CREATE TABLE `dispositivo` (
   `id_sala` bigint(11) default NULL,
   `estado` int(11) default NULL,
   `codigo` varchar(50) default NULL,
-  `tipo` int(11) default NULL,
+  `tipo` int(11) default NULL COMMENT '0=MOTA;1=RFID;2=CAMARA',
   PRIMARY KEY  (`id`)
 ) ;
 
@@ -120,8 +120,10 @@ CREATE TABLE `log_rfid` (
   `id_rfid` bigint(20) default NULL,
   `timestamp_inicio` timestamp NULL default NULL,
   `timestamp_fin` timestamp NULL default NULL,
+  `codigo_tarjeta` VARCHAR( 50 ) NOT NULL,
   PRIMARY KEY  (`id`)
 );
+
 
 -- 
 -- Volcar la base de datos para la tabla `log_rfid`
@@ -212,3 +214,64 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `usuario`, `clave`, `nombre`, `apellido`, `email`, `otros_mails`, `telefono1`, `telefono2`, `id_rol`, `baja_logica`) VALUES 
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Admin', 'Admin', 'cgalli@cys.com.ar', NULL, NULL, NULL, 1, 0);
+
+
+-- 
+-- Volcar la base de datos para la tabla `sala`
+-- 
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (1, 'Sala Mayor I');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (2, 'Sala Lateral Principal I');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (3, 'Exposiciones Temporales');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (4, 'Sala Mayor II');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (5, 'Sala Óvalo');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (6, 'Sala Lateral Principal I');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (7, 'Sala Principal');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (8, 'Sala de Conciertos');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (9, 'Sala Murillo');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (10, 'Sala del Mirador');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (11, 'Sala Reliquias');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (12, 'Sala Barroco');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (13, 'Diapoteca');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (14, 'Sala de Invidente');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (15, 'Sala Homenaje');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (16, 'Sala Peremne');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (17, 'Sala de Recuerdos');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (18, 'Sala de Reunión');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (19, 'Sala Rincón');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (20, 'Sala General');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (21, 'Sala Acústica');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (22, 'Sala Capitular');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (23, 'Sala de Eventos');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (24, 'Sala Media');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (25, 'Sala de Simposios');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (26, 'Sala Vidriada');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (27, 'Sala Velázquez');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (28, 'Sala Panorámica');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (29, 'Sala de las Musas');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (30, 'Patio');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (31, 'Corredor C1');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (32, 'Corredor C2');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (33, 'Corredor C3');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (34, 'Corredor C4');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (35, 'Hemeroteca');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (36, 'Videoteca');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (37, 'Biblioteca');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (38, 'Sala Bellas Artes');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (39, 'Fonoteca');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (40, 'Mapoteca');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (41, 'Sala Jerónimos');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (42, 'Escalera A');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (43, 'Sala Mini I');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (44, 'Sala Colonial');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (45, 'Sala Lápidas');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (46, 'Depósito D2');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (47, 'Depósito D1');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (48, 'Depósito D3');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (49, 'Hall de Entrada');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (50, 'Sala de Exposiciones');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (51, 'Auditorio');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (52, 'Vestíbulo Principal');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (53, 'Sala del Botánico');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (54, 'Pasillo P1');
+INSERT INTO `sala` (`id`, `descripcion`) VALUES (55, 'Hall Lateral');
+
