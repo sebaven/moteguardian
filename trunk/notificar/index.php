@@ -91,7 +91,7 @@
 					$db->leer($str_sql);
 						?> 
 						<estado>OK</estado>
-						<descripcion>Notificación de fin de detección del lector RFID "<?=$_GET['idMota']?>" recibida</descripcion>
+						<descripcion>Notificación de fin de detección del lector RFID "<?=$_GET['idRFID']?>" recibida</descripcion>
 						<?
 				} else {
 					?> 
