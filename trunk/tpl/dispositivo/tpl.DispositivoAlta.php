@@ -54,7 +54,7 @@
 		<br>
 			<div align="center">
 				<span class="botonGrad"><input type="submit"  name ="btnProcesar" value="Aceptar" class="boton" /></span>
-				<span class="botonGrad"><input type="button"  value="Cancelar" class="boton" onClick="javascript: location.href='index.php?accion=usuario_adm'; return false;" /></span>
+				<span class="botonGrad"><input type="button"  value="Cancelar" class="boton" onClick="javascript: location.href='index.php?accion=dispositivo_adm'; return false;" /></span>
 			</div>
 		<br>
 	</fieldset>
