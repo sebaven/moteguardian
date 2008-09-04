@@ -18,13 +18,15 @@ class LogRfid extends AbstractEntity
 		'id_rfid'			=> 'int',
 		'timestamp_inicio'	=> 'varchar',
 		'timestamp_fin'		=> 'varchar',
+		'codigo_tarjeta'	=> 'varchar',
         'baja_logica' => 'int'
     );
 
     var $id;
     var $id_mota;
     var $timestamp_inicio;    
-    var $timestamp_fin;    
+    var $timestamp_fin;
+    var $codigo_tarjeta;    
     var $baja_logica;   
 }
 ?>
