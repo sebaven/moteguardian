@@ -125,7 +125,7 @@ function agregarPlanificacion(id, aquien)
 }
 
 /*------------------------------------------------------------
- * Usuarios
+ * Dispositivos
  ------------------------------------------------------------*/
 
 function seleccionarDispositivo(id) 
@@ -140,4 +140,22 @@ function borrarDispositivo(id)
     
     if (res)
         location.href = 'index.php?accion=dispositivo_del&btnProcesar=1&id=' + id;
+}
+
+/*------------------------------------------------------------
+ * Guardias
+ ------------------------------------------------------------*/
+
+function seleccionarGuardia(id) 
+{
+    location.href = 'index.php?accion=guardia_mod&id=' + id;
+}
+
+
+function borrarGuardia(id) 
+{
+    var res = confirm('¿Borrar el Guardia\?')
+    
+    if (res)
+        location.href = 'index.php?accion=guardia_del&btnProcesar=1&id=' + id;
 }
