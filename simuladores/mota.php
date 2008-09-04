@@ -22,14 +22,14 @@
 				// Se actualiza el estado de la mota
 				$str_sql = 'UPDATE `dispositivo` SET `estado`=\'' . CONST_EN_USO . '\' WHERE `id`=\''.$_GET['idMota'].'\' LIMIT 1;';
 				$db->leer($str_sql);
-				$mensaje_resultado='Operación de encendido de Mota "' . $_GET['idMota'] . '" recibida';
+				$mensaje_resultado.='Operación de encendido de Mota "' . $_GET['idMota'] . '" recibida<br/>';
 			} else if ($_GET['estado'] == CONST_APAGADO) { // APAGAR
 				// Se actualiza el estado de la mota
 				$str_sql = 'UPDATE `dispositivo` SET `estado`=\'' . CONST_APAGADO . '\' WHERE `id`=\''.$_GET['idMota'].'\' LIMIT 1;';
 				$db->leer($str_sql);
-				$mensaje_resultado='Operación de apagado de Mota "' . $_GET['idMota'] . '" recibida';
+				$mensaje_resultado.='Operación de apagado de Mota "' . $_GET['idMota'] . '" recibida<br/>';
 			} else {
-				$mensaje_error='ERROR: La operación recibida es inválida';
+				$mensaje_error.='ERROR: La operación recibida es inválida<br/>';
 			}
 		}
 		else if (!empty($_GET['enviar_evento']) && isset($_GET['enviar_evento'])) {
@@ -37,15 +37,38 @@
 				// Se inserta la nueva detección en la tabla log_mota
 				$str_sql = 'INSERT INTO `log_mota` (`id_mota` , `timestamp_inicio`) VALUES (\''.$_GET['idMota'].'\', NOW( ));';
 				$db->leer($str_sql);
-				$mensaje_resultado='Notificación de detección de Mota "' . $_GET['idMota'] . '" recibida';
+				$mensaje_resultado.='Notificación de detección de Mota "' . $_GET['idMota'] . '" recibida<br/>';
+				// Se busca si hay algún guardia en la sala en la que reside esta mota
+				$str_sql  = ' SELECT lr1.`codigo_tarjeta` AS codigo_tarjeta FROM `log_rfid` AS lr1, `dispositivo` WHERE ';
+				$str_sql .= ' lr1.`id_rfid` = `dispositivo`.`id` ';
+				$str_sql .= ' AND lr1.`timestamp_fin` IS NULL ';
+				$str_sql .= ' AND lr1.`timestamp_inicio`=(SELECT MAX(`timestamp_inicio`) AS ti FROM `log_rfid` AS lr2 WHERE lr1.`id_rfid`=lr2.`id_rfid` AND lr1.`codigo_tarjeta` = lr2.`codigo_tarjeta`) ';
+				$str_sql .= ' AND `dispositivo`.`id_sala`=(SELECT `id_sala` FROM `dispositivo` WHERE `id`=\''.$_GET['idMota'].'\' LIMIT 1)';
+				$str_sql .= ' LIMIT 1;';
+				$db->leer($str_sql);
+				$hay_guardia = false;
+				while($r = $db->reg_array($rs))
+				{
+					$hay_guardia = true; 
+				}
+				if ($hay_guardia == false) {
+					// Actualizo el estado de la mota
+					$str_sql = 'UPDATE `dispositivo` SET `estado`=\'' . CONST_EN_ALARMA . '\' WHERE `id`=\''.$_GET['idMota'].'\' LIMIT 1;';
+					$db->leer($str_sql);
+					$mensaje_resultado.='Estado de la mota llevado a EN_ALARMA<br/>';
+					// Disparo la alarma
+					$str_sql = 'INSERT INTO `log_alarma` (`id_dispositivo_disparador` , `timestamp_inicio`) VALUES (\''.$_GET['idMota'].'\', NOW( ));';
+					$db->leer($str_sql);
+					$mensaje_error.='¡ALARMA ACTIVADA!<br/>';
+				}
 			} else if ($_GET['evento'] == '0') { // FIN DETECCIÓN
 				// Se escribe el timestamp_fin de la última detección no finalizada de esta mota
 				// IMPORTANTE: En la consulta interviene una tabla intermedia 'aux_log_mota' como workaround a un problema al seleccionar desde la tabla a actualizar. Extraído de: http://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/
-				$str_sql = 'UPDATE `log_mota` SET `timestamp_fin`=NOW( ) WHERE `id_mota`=\''.$_GET['idMota'].'\' AND `timestamp_inicio`=(SELECT ti FROM (SELECT MAX(`timestamp_inicio`) AS ti FROM `log_mota` WHERE `id_mota`=\''.$_GET['idMota'].'\' AND `timestamp_fin` IS NULL) as aux_log_mota) LIMIT 1;';
+				$str_sql = 'UPDATE `log_mota` SET `timestamp_fin`=NOW( ) WHERE `id_mota`=\''.$_GET['idMota'].'\' AND `timestamp_fin` IS NULL AND `timestamp_inicio`=(SELECT ti FROM (SELECT MAX(`timestamp_inicio`) AS ti FROM `log_mota` WHERE `id_mota`=\''.$_GET['idMota'].'\') AS aux_log_mota) LIMIT 1;';
 				$db->leer($str_sql);
-				$mensaje_resultado='Notificación de fin de detección de Mota "' . $_GET['idMota'] . '" recibida';
+				$mensaje_resultado.='Notificación de fin de detección de Mota "' . $_GET['idMota'] . '" recibida<br/>';
 			} else {
-				$mensaje_error='ERROR: El evento notificado es inválido';
+				$mensaje_error.='ERROR: El evento notificado es inválido<br/>';
 			}
 		}
 	}
@@ -95,7 +118,7 @@
 					<input type="submit" name="enviar_estado" value="Apagar" />
 					<?
 					// Se busca el último evento de la Mota:
-					$str_sql = 'SELECT * FROM `log_mota` WHERE `id_mota`=\''.$_GET['idMota'].'\' AND `timestamp_inicio`=(SELECT MAX(`timestamp_inicio`) AS ti FROM `log_mota` WHERE `id_mota`=\''.$_GET['idMota'].'\') AND `timestamp_fin` IS NULL LIMIT 1;';
+					$str_sql = 'SELECT * FROM `log_mota` WHERE `id_mota`=\''.$_GET['idMota'].'\' AND `timestamp_fin` IS NULL AND `timestamp_inicio`=(SELECT MAX(`timestamp_inicio`) AS ti FROM `log_mota` WHERE `id_mota`=\''.$_GET['idMota'].'\') LIMIT 1;';
 					$rs = $db->leer($str_sql);
 					$evento_mota_actual = 0; // NO DETECTANDO...
 					while($r = $db->reg_array($rs))
@@ -123,14 +146,14 @@
 					<?
 				}
 				else if ($estado_mota_actual!=-1) {
-					$mensaje_error.='Estado desconocido de mota...';
+					$mensaje_error.='Debe cambiar el estado de la mota para poder utilizarla en el simulador...<br/>';
 				}
 				?>
 		</form>
 		<?
 		}
 		else {
-			$mensaje_error='No hay Motas cargadas en el sistema...';
+			$mensaje_error.='No hay Motas cargadas en el sistema...<br/>';
 		}
 		?>
 		<span style="color: green;"><?=$mensaje_resultado?></span>
