@@ -26,6 +26,7 @@ class DispositivoAlta extends Action {
     {        
         $dispositivo = new Dispositivo();        
         $dispositivo->setFields($_POST);
+        $dispositivo->baja_logica=FALSE_;
         return $dispositivo->save();
     }
 
