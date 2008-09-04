@@ -42,8 +42,8 @@ class ListadoGuardias extends Listado
 	                      	    "fijo" =>false,
 								"dato_width" => "35%");
 								
-		$columnas["Sala"] = array("nombre" =>"Sala",
-		      	                "title" =>"Sala",
+		$columnas["Usuario"] = array("nombre" =>"Usuario",
+		      	                "title" =>"Usuario",
 		          	            "dato_align" =>"left",
 		              	        "datos" =>array("usuario"),
 		                  	    "orden" =>"usuario",
