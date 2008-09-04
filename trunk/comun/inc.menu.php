@@ -74,6 +74,7 @@
     <ul>
         <? if (RegistryHelper::getRolUsuario()->id==ROL_ID_ADMINISTRADOR) {?>
         <li><a href="index.php?accion=estadistica_ronda_realizada">Rondas Realizadas</a></li>
+        <li><a href="index.php?accion=estadistica_alarma">Alarmas</a></li>
         <? } ?>
     </ul>
 </div>                          
