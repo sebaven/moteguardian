@@ -92,6 +92,29 @@
 		<clase>SalidaPopupPlanificacion</clase>
 	</accion>
 	
+	<!--ITEM RONDA-->
+	
+	<accion>
+		<nombre>ItemRondaConfiguracion</nombre>
+		<link>item_ronda_configuracion</link>
+		<modulo>item_ronda</modulo>
+		<clase>ItemRondaConfiguracion</clase>
+	</accion>		
+	
+	<accion>
+		<nombre>ItemRondaBaja</nombre>
+		<link>item_ronda_del</link>
+		<modulo>item_ronda</modulo>
+		<clase>ItemRondaDel</clase>
+	</accion>		
+	
+	<accion>
+		<nombre>SalidaPopupItemRonda</nombre>
+		<link>salida_popup_item_ronda</link>
+		<modulo>item_ronda</modulo>
+		<clase>SalidaPopupItemRonda</clase>
+	</accion>
+	
     <!--  S A L A -->
         
     <accion>

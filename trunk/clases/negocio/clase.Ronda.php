@@ -15,13 +15,11 @@ class Ronda extends AbstractEntity
     var $_fields = array
     (	   
 		'id_guardia'		=> 'int',
-		'id_planificacion'	=> 'int',
         'baja_logica' => 'int'
     );
 
     var $id;
-    var $id_guardia;
-    var $id_planificacion;        
+    var $id_guardia;            
     var $baja_logica;   
 }
 ?>

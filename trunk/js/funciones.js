@@ -3,8 +3,7 @@
  ------------------------------------------------------------*/
 function popup(nombre, pagina, x, y) 
 {
-	eval ("newwin_" + nombre + "=window.open('"+pagina+"','"+nombre+"','height='+y+',top=' + (screen.height-y)/2 + ',width='+x+',left=' + (screen.width - x)/2 + ',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no');");
-	//eval ("newwin_" + nombre + ".focus();");
+	eval("newwin_" + nombre + "=window.open('" + pagina + "','" + nombre + "','height='+y+',top=' + (screen.height-y)/2 + ',width='+x+',left=' + (screen.width - x)/2 + ',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no');");
 	return false;
 }
 
@@ -86,18 +85,12 @@ function borrarUsuario(id)
 
 
 function borrarPlanificacion(id)
-{
-    apretarBotonRecargar();
-	var res = confirm('¿Borrar la Planificación\?');			
+{    
+	apretarBotonRecargar();
+	var res = confirm('¿Desea borrar la Planificación\?');			
 	if (res) {
-		if(document.getElementById('id_recoleccion')){
-			id_recoleccion = document.getElementById('id_recoleccion').value;		
-			location.href = 'index.php?accion=planificacion_del&id='+id+'&id_recoleccion='+id_recoleccion;
-		} else {
-			id_envio = document.getElementById('id_envio').value;		
-			location.href = 'index.php?accion=planificacion_del&id='+id+'&id_envio='+id_envio;
-		}		
-	}
+		location.href = 'index.php?accion=planificacion_del&id='+id+'&id_ronda='+document.getElementById('id_ronda').value;
+	} 
 }
 
 
@@ -106,18 +99,66 @@ function seleccionarPlanificacion(id)
 	var res = confirm('¿Desea modificar la planificación\?');
 	if(res) {				
 		url = 'index.php?accion=planificacion_configuracion&pop=1&limpiarSession=1&id='+id;
-		popup("ConfiguracionPlanificacion",url,'600','500');
+		popup("ConfiguracionPlanificacion",url,'600','250');
 	}
 }
 
 
 function agregarPlanificacion(id) 
 {	
-	var res = confirm('¿Desea agregar una planificación\?');
+	url='index.php?pop=1&limpiarSession=1&accion=planificacion_configuracion&id_ronda='+id;		
+	popup("ConfiguracionPlanificacion",url,'600','250');	
+}
+
+
+/*------------------------------------------------------------
+ * Item ronda
+ ------------------------------------------------------------*/
+
+
+function borrarItemRonda(id)
+{    
+	apretarBotonRecargar();
+	var res = confirm('¿Desea borrar el eslabón de la ronda\?');			
+	if (res) {
+		location.href = 'index.php?accion=item_ronda_del&id='+id+'&id_ronda='+document.getElementById('id_ronda').value;
+	} 
+}
+
+
+function seleccionarItemRonda(id) 
+{
+	var res = confirm('¿Desea modificar el eslabón de la ronda\?');
 	if(res) {				
-		'index.php?accion=planificacion_configuracion&pop=1&limpiarSession=1&id_ronda='+id;		
-		popup("ConfiguracionPlanificacion",url,'600','500');
+		url = 'index.php?accion=item_ronda_configuracion&pop=1&limpiarSession=1&id='+id;
+		popup("ConfiguracionItemRonda",url,'600','250');
 	}
+}
+
+
+function agregarItemRonda(id) 
+{	
+	url='index.php?pop=1&limpiarSession=1&accion=item_ronda_configuracion&id_ronda='+id;		
+	popup("ConfiguracionItemRonda",url,'600','250');	
+}
+
+
+/*------------------------------------------------------------
+ * Rondas
+ ------------------------------------------------------------*/
+
+function seleccionarRonda(id) 
+{
+    location.href = 'index.php?accion=ronda_new&id_ronda=' + id;
+}
+
+
+function borrarRonda(id) 
+{
+    var res = confirm('¿Borrar el Ronda\?')
+    
+    if (res)
+        location.href = 'index.php?accion=ronda_del&btnProcesar=1&id=' + id;
 }
 
 /*------------------------------------------------------------

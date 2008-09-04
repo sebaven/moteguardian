@@ -10,14 +10,9 @@ class PlanificacionDel extends Action {
 		$planificacion->baja_logica = TRUE_;
 		$res = $planificacion->save();
 		
-		if($_GET['id_recoleccion']) {
-			$parametros['id_recoleccion'] = $_GET['id_recoleccion'];
-			$accion = 'RecoleccionConf';	
-		} else {
-			$parametros['id_envio'] = $_GET['id_envio'];
-			$accion = 'EnvioAlta';
-		}
-		
+		$parametros['id_ronda'] = $_GET['id_ronda'];
+		$accion = 'RondaAlta';
+				
 		if ($res) {
 			$nextAction->setNextAction($accion, 'eliminacion.planificacion.ok', $parametros);
 		}
