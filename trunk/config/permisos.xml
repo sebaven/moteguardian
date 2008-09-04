@@ -64,7 +64,7 @@
 		<rol>ADMINISTRADOR</rol>
 	</permiso>
     
-    <!-- SALA -->
+    <!-- DISPOSITIVO -->
     
     <permiso>
         <accion>DispositivoAlta</accion>
@@ -82,6 +82,26 @@
         <accion>DispositivoMod</accion>
         <rol>ADMINISTRADOR</rol>
     </permiso>
+    
+    <!-- GUARDIA -->
+    
+    <permiso>
+        <accion>GuardiaAlta</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>
+    <permiso>
+        <accion>GuardiaAdm</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>
+    <permiso>
+        <accion>GuardiaDel</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>
+    <permiso>
+        <accion>GuardiaMod</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>
+    
 </permisos>
 
 	

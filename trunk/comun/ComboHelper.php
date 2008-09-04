@@ -4,7 +4,7 @@ include_once BASE_DIR ."clases/dao/dao.Rol.php";
 include_once BASE_DIR ."clases/dao/dao.Sala.php";   
 
 
-function ComboUsuario($first=true,$text='')
+function ComboUsuario($first=true,$text='Seleccione el usuario...')
 {
 	$usuarioDAO = new UsuarioDAO();
 	return PresentationUtil::getCombo($usuarioDAO->getAll("usuario"), "usuario",$first,$text);

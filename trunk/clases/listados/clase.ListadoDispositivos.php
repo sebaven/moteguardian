@@ -26,29 +26,29 @@ class ListadoDispositivos extends Listado
 		$maxpag = "5";
 
 		// Columnas
-		$columnas["TipoDispositivo"] = array("nombre" =>"Tipo de Dispositivo",
-        	                   	"title" =>"Tipo de Dispositivo",
-            	                "dato_align" =>"left",
-                    	        "orden" => "tipo",
-                        	    "fijo" =>false,
-                	            "dato_tipo_dispositivo" => "tipo",
-								"dato_width" => "10%");
-
 		$columnas["Codigo"] = array("nombre" =>"Codigo",
 	      	                   	"title" =>"C&oacute;digo",
 	          	                "dato_align" =>"left",
 	              	            "datos" =>array("codigo"),
 	                  	        "orden" =>"codigo",
 	                      	    "fijo" =>false,
-								"dato_width" => "10%");
+								"dato_width" => "15%");
+		
+		$columnas["TipoDispositivo"] = array("nombre" =>"Tipo de Dispositivo",
+        	                   	"title" =>"Tipo de Dispositivo",
+            	                "dato_align" =>"left",
+                    	        "orden" => "tipo",
+                        	    "fijo" =>false,
+                	            "dato_tipo_dispositivo" => "tipo",
+								"dato_width" => "15%");
 								
 		$columnas["Sala"] = array("nombre" =>"Sala",
 		      	                "title" =>"Sala",
 		          	            "dato_align" =>"left",
-		              	        "datos" =>array("id_sala"),
-		                  	    "orden" =>"id_sala",
+		              	        "datos" =>array("sala"),
+		                  	    "orden" =>"sala",
 		                      	"fijo" =>false,
-								"dato_width" => "10%");
+								"dato_width" => "15%");
 								
 		$columnas["Descripcion"] = array("nombre" =>"Descripcion",
 		      	                "title" =>"Descripci&oacute;n",
@@ -56,7 +56,7 @@ class ListadoDispositivos extends Listado
 		              	        "datos" =>array("descripcion"),
 		                  	    "orden" =>"descripcion",
 		                      	"fijo" =>false,
-								"dato_width" => "15%");
+								"dato_width" => "30%");
 								
 		$columnas["Estado"] = array("nombre" =>"Estado",
 		      	                "title" =>"Estado",
@@ -64,7 +64,7 @@ class ListadoDispositivos extends Listado
 		              	        "dato_estado_dispositivo" => "estado",
 		                  	    "orden" =>"estado",
 		                      	"fijo" =>false,
-								"dato_width" => "10%");
+								"dato_width" => "5%");
 
         
 		$columnas["editar"]=	array("nombre"=>"Editar",
