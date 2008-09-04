@@ -17,7 +17,7 @@ class GuardiaDAO extends AbstractDAO
         }
             
         if($values['codigo_tarjeta']){
-            $w[] = "g.codigo_tarjeta LIKE '%".addEscapeosParaLike($values['codigio_tarjeta'])."%'"; 
+            $w[] = "g.codigo_tarjeta LIKE '%".addEscapeosParaLike($values['codigo_tarjeta'])."%'"; 
         }
             
         if($values['id_usuario']){

@@ -26,6 +26,14 @@ class ListadoRondasRealizadas extends Listado
 		$maxpag = "5";
 
 		// Columnas
+        $columnas["Nombre"] = array("nombre" =>"Nombre",
+                                  "title" =>"Nombre",
+                                  "dato_align" =>"left",
+                                  "datos" =>array("nombre"),
+                                  "orden" =>"nombre",
+                                  "fijo" =>false,
+                                "dato_width" => "30%");
+                                
         $columnas["Sala"] = array("nombre" =>"Sala",
                                   "title" =>"Sala",
                                   "dato_align" =>"left",
