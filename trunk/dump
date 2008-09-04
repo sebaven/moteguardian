@@ -20,7 +20,7 @@ CREATE TABLE `dispositivo` (
   `descripcion` text,
   `id` bigint(11) NOT NULL auto_increment,
   `id_sala` bigint(11) default NULL,
-  `estado` int(11) default NULL,
+  `estado` int(11) default NULL COMMENT '1=AVERIADO;2=NUEVO;3=EN_ALARMA;4=EN_USO;5=APAGADO',
   `codigo` varchar(50) default NULL,
   `tipo` int(11) default NULL COMMENT '1=RFID;2=MOTA;3=CAMARA',
   `baja_logica` tinyint(4) NOT NULL default '0',
