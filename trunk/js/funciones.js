@@ -111,15 +111,11 @@ function seleccionarPlanificacion(id)
 }
 
 
-function agregarPlanificacion(id, aquien) 
+function agregarPlanificacion(id) 
 {	
 	var res = confirm('¿Desea agregar una planificación\?');
 	if(res) {				
-		if(aquien=='recoleccion'){
-			url = 'index.php?accion=planificacion_configuracion&pop=1&limpiarSession=1&id_recoleccion='+id;
-		} else {
-			url = 'index.php?accion=planificacion_configuracion&pop=1&limpiarSession=1&id_envio='+id;
-		}
+		'index.php?accion=planificacion_configuracion&pop=1&limpiarSession=1&id_ronda='+id;		
 		popup("ConfiguracionPlanificacion",url,'600','500');
 	}
 }

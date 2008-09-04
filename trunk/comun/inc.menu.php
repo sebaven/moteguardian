@@ -54,6 +54,18 @@
         <? } ?>
     </ul>
 </div>
-                          
+      
+<!-- MENU RONDAS -->
+
+<div class="silverheader"><a href="#">Rondas</a></div>
+<div class="submenu">
+    <ul>
+        <? if (RegistryHelper::getRolUsuario()->id==ROL_ID_ADMINISTRADOR) {?>
+        <li><a href="index.php?accion=ronda_new">Alta</a></li>
+        <li><a href="index.php?accion=ronda_adm">Administraci&oacute;n</a></li>
+        <? } ?>
+    </ul>
+</div>
+                    
 </div>
 <?}?>
