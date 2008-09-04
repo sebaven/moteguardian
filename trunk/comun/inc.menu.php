@@ -23,11 +23,8 @@
 
 <div class="silverheader"><a href="#">Salas</a></div>
 <div class="submenu">
-	<ul>
-		<? if (RegistryHelper::getRolUsuario()->id==ROL_ID_ADMINISTRADOR) {?>
-		<li><a href="index.php?accion=sala_select&redir=usuario_new&prefijoTitle=Configurar%20">Configuraci&oacute;n</a></li>
-		<? } ?>
-		<li><a href="index.php?accion=sala_select&redir=usuario_adm&prefijoTitle=Supervisar%20">Consulta</a></li>
+	<ul>		
+		<li><a href="index.php?accion=sala_select&redir=sala_monitor&prefijoTitle=Supervisar%20">Monitoreo de salas</a></li>
 	</ul>
 </div>
 
