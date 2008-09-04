@@ -20,7 +20,7 @@ define("CONST_MOTA",2);
 define("CONST_CAMARA",3);
 
 /* Constantes para los estados de los dipositivos */
-define("CONST_AVERIADO", 1);
+define("CONST_AVERIADO",1);
 define("CONST_NUEVO",2);
 define("CONST_EN_ALARMA",3);
 define("CONST_EN_USO",4);
