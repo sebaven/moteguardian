@@ -25,7 +25,7 @@ CREATE TABLE `dispositivo` (
   `tipo` int(11) default NULL COMMENT '1=RFID;2=MOTA;3=CAMARA',
   `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ;
 
 -- 
 -- Volcar la base de datos para la tabla `dispositivo`
@@ -45,7 +45,7 @@ CREATE TABLE `guardia` (
   `id_usuario` bigint(20) default NULL,
   `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+)  ;
 
 -- 
 -- Volcar la base de datos para la tabla `guardia`
@@ -66,7 +66,7 @@ CREATE TABLE `item_ronda` (
   `orden` int(11) default NULL,
   `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+)  ;
 
 -- 
 -- Volcar la base de datos para la tabla `item_ronda`
@@ -87,7 +87,7 @@ CREATE TABLE `log_alarma` (
   `es_falsa` tinyint(1) default NULL,
   `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+)  ;
 
 -- 
 -- Volcar la base de datos para la tabla `log_alarma`
@@ -107,7 +107,7 @@ CREATE TABLE `log_mota` (
   `timestamp_fin` timestamp NULL default NULL,
   `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+)  ;
 
 -- 
 -- Volcar la base de datos para la tabla `log_mota`
@@ -128,7 +128,7 @@ CREATE TABLE `log_rfid` (
   `baja_logica` tinyint(4) NOT NULL default '0',
   `id_rfid` bigint(20) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ;
 
 -- 
 -- Volcar la base de datos para la tabla `log_rfid`
@@ -150,7 +150,7 @@ CREATE TABLE `planificacion` (
   `baja_logica` tinyint(1) NOT NULL,
   `fecha_vigencia` date NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+)  ;
 
 -- 
 -- Volcar la base de datos para la tabla `planificacion`
@@ -168,7 +168,7 @@ CREATE TABLE `rol` (
   `descripcion` varchar(50) NOT NULL,
   `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ;
 
 -- 
 -- Volcar la base de datos para la tabla `rol`
@@ -190,7 +190,7 @@ CREATE TABLE `ronda` (
   `id_guardia` bigint(20) default NULL,
   `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+)  ;
 
 -- 
 -- Volcar la base de datos para la tabla `ronda`
@@ -208,7 +208,7 @@ CREATE TABLE `sala` (
   `descripcion` varchar(255) default NULL,
   `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=56 ;
+)  ;
 
 -- 
 -- Volcar la base de datos para la tabla `sala`
@@ -290,7 +290,7 @@ CREATE TABLE `usuario` (
   `id_rol` smallint(6) NOT NULL,
   `baja_logica` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ;
 
 -- 
 -- Volcar la base de datos para la tabla `usuario`

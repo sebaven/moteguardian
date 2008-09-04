@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="js/ddaccordion.js"></script>
 	<script type="text/javascript" src="js/funciones.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-	<title>SRDF</title>
+	<title>MoteGuardian</title>
 	<link href="css/estilos.css" rel="stylesheet" type="text/css">
 	<link href="css/estilos_listado.css" rel="stylesheet" type="text/css">
 	<!--[if IE]>

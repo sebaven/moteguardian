@@ -9,7 +9,7 @@
 		    </table>
 		      <table width="950" border="0" cellspacing="0" cellpadding="0">
 		        <tr>
-		          <td width="950" height="25" background="imagenes/bg_gradient25x1blue.jpg" align="center" class="Estilo2"> ©2008 SDRFiP. </td>
+		          <td width="950" height="25" background="imagenes/bg_gradient25x1blue.jpg" align="center" class="Estilo2"> ©2008 MoteGuardian. </td>
 		        </tr>
 		      </table></td>
 		  </tr>
