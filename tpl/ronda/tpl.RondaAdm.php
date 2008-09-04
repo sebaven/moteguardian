@@ -1,4 +1,4 @@
-<h2 align="right"><?=PropertiesHelper::GetKey('administrar.guardias')?></h2>
+<h2 align="right">Administrar rondas</h2>
 <br>
 <?=$errores ?>
 <?=$mensaje ?>
