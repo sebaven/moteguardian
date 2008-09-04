@@ -4,6 +4,7 @@ include_once BASE_DIR ."clases/listados/clase.ListadoPlanificacion.php";
 include_once BASE_DIR ."clases/listados/clase.ListadoDispositivos.php";
 include_once BASE_DIR ."clases/listados/clase.ListadoGuardias.php";
 include_once BASE_DIR ."clases/listados/clase.ListadoRondasRealizadas.php";
+include_once BASE_DIR ."clases/listados/clase.ListadoAlarmas.php";   
 
 class Listados
 {		
