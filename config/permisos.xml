@@ -126,7 +126,11 @@
         <accion>EstadisticaRondaRealizada</accion>
         <rol>ADMINISTRADOR</rol>
     </permiso>
-
+    <permiso>
+        <accion>EstadisticaAlarma</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>    
+               
 </permisos>
 
 	

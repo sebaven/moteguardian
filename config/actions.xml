@@ -198,5 +198,11 @@
         <modulo>Estadistica</modulo>
         <clase>EstadisticaRondaRealizada</clase>
     </accion>
+    <accion>
+        <nombre>EstadisticaAlarma</nombre>
+        <link>estadistica_alarma</link>
+        <modulo>Estadistica</modulo>
+        <clase>EstadisticaAlarma</clase>
+    </accion>
 
 </acciones>	
