@@ -1,4 +1,4 @@
-<h2 align="right">Alta de rondas</h2>
+<h2 align="right">Configuraci&oacute;n de rondas</h2>
 <br>
 <?=$errores ?>
 <?=$mensaje ?>
