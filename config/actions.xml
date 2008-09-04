@@ -123,6 +123,12 @@
         <modulo>Sala</modulo>
         <clase>SalaSelect</clase>
     </accion>
+    <accion>
+        <nombre>SalaMonitor</nombre>
+        <link>sala_monitor</link>
+        <modulo>Sala</modulo>
+        <clase>SalaMonitor</clase>
+    </accion>
 
     <!--  D I S P O S I T I V O S -->
         
@@ -228,4 +234,13 @@
         <clase>EstadisticaAlarma</clase>
     </accion>
 
+
+	<!--  A L A R M A -->
+	<accion>
+        <nombre>AtenderAlarma</nombre>
+        <link>atender_alarma</link>
+        <modulo>Alarma</modulo>
+        <clase>AtenderAlarma</clase>
+    </accion>
+	
 </acciones>	

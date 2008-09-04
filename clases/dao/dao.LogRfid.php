@@ -8,7 +8,19 @@ class LogRfidDAO extends AbstractDAO
 		return new LogRfid();
 	}
     
-    function getSqlRondasRealizadas($values = '')
+	function getGuardiaEnSala($idSala){
+		$sql = "SELECT ";
+		$sql .= 	"g.nombre ";
+		$sql .= "FROM guardia g ";
+		$sql .= 	"INNER JOIN log_rfid lr 	ON (lr.codigo_tarjeta=g.codigo_tarjeta AND lr.timestamp_fin IS NULL)";
+		$sql .= 	"INNER JOIN dispositivo d 	ON (lr.id_rfid=d.id  AND  d.tipo='".CONST_RFID."')";
+		$sql .= 	"INNER JOIN sala s 			ON (s.id=d.id_sala AND s.id = '".addslashes($idSala)."')";
+
+		$res = $this->getEntity()->_db->leer($sql);
+		return $this->_rs2Collection($res);
+	}
+	
+    function getSqlRondasRealizadas($values = '')    
     {
         $w = array();
                        

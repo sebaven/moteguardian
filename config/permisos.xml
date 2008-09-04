@@ -63,6 +63,11 @@
 		<accion>SalaSelect</accion>
 		<rol>ADMINISTRADOR</rol>
 	</permiso>
+	<permiso>
+		<accion>SalaMonitor</accion>
+		<rol>GUARDIA</rol>
+		<rol>ADMINISTRADOR</rol>
+	</permiso>
     
     
     <!-- ITEM RONDA  -->
@@ -85,6 +90,11 @@
 	<permiso>
 		<accion>SalaSelect</accion>
 		<rol>ADMINISTRADOR</rol>
+	</permiso>
+	<permiso>
+		<accion>SalaMonitior</accion>
+		<rol>ADMINISTRADOR</rol>
+		<rol>GUARDIA</rol>
 	</permiso>
     
     <!-- DISPOSITIVO -->
@@ -154,6 +164,13 @@
         <rol>ADMINISTRADOR</rol>
     </permiso>    
                
+    <!-- ALARMA -->
+    <permiso>
+    	<accion>AtenderAlarma</accion>
+    	<rol>ADMINISTRADOR</rol>
+    	<rol>GUARDIA</rol>
+    	<rol>AUTORIDAD</rol>
+    </permiso>
 </permisos>
 
 	

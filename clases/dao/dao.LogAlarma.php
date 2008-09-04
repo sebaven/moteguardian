@@ -80,6 +80,78 @@ class LogAlarmaDAO extends AbstractDAO
 
         return $sql;
     }
+    
+    function getSalaAlarmaIniciada()
+    {    	
+    	$sql = 
+				"SELECT s.id as id_sala ".
+				"FROM log_alarma la ".
+					"INNER JOIN dispositivo d ON la.id_dispositivo_disparador = d.id ".
+					"INNER JOIN sala s ON s.id = d.id_sala ".
+				"WHERE la.timestamp_fin IS NULL ".
+					"AND la.baja_logica = '".FALSE_."' ";
+    	
+    	$alarmas = $this->_rs2Collection($this->getEntity()->_db->leer($sql));
+    	
+    	return $alarmas[0]->id_sala;
+    }
+    
+	
+    function marcarAlarmasComoFalsas()
+    {
+    	$ahora = new Fecha();
+    	
+		$sql =
+				"UPDATE log_alarma ".
+				"SET timestamp_fin = '".$ahora->dateToString()."', ".
+					"es_falsa = '".TRUE_."' ";
+				"WHERE timestamp_fin IS NULL ";					
+    	
+    	$this->getEntity()->_db->leer($sql);
+    	
+    	$sql =
+				"UPDATE log_mota ".
+				"SET timestamp_fin = '".$ahora->dateToString()."' ".					
+				"WHERE timestamp_fin IS NULL ";
+    	
+    	$this->getEntity()->_db->leer($sql);
+
+    	$sql =
+				"UPDATE dispositivo ".
+				"SET estado = '".CONST_EN_USO."' ".    						
+				"WHERE estado = '".CONST_EN_ALARMA."' ";
+    	
+    	$this->getEntity()->_db->leer($sql);
+	}
+	
+    function marcarAlarmasComoReales()
+    {
+    	$ahora = new Fecha();
+    	
+		$sql =
+				"UPDATE log_alarma ".
+				"SET timestamp_fin = '".$ahora->dateToString()."', ".
+					"es_falsa = '".FALSE_."' ";
+				"WHERE timestamp_fin IS NULL ";					
+    		
+    	$this->getEntity()->_db->leer($sql);
+    	
+    	$sql =
+				"UPDATE log_mota ".
+				"SET timestamp_fin = '".$ahora->dateToString()."' ".					
+				"WHERE timestamp_fin IS NULL ";
+    	
+    	$this->getEntity()->_db->leer($sql);
+
+    	$sql =
+				"UPDATE dispositivo ".
+				"SET estado = '".CONST_EN_USO."' ".    						
+				"WHERE estado = '".CONST_EN_ALARMA."' ";
+    	
+    	$this->getEntity()->_db->leer($sql);
+    	
+	}
+	
 }
 
 ?>
