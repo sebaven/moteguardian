@@ -161,5 +161,34 @@
         <clase>GuardiaMod</clase>
     </accion>
     
+    <!-- R O N D A -->
+        
+    <accion>
+        <nombre>RondaAlta</nombre>
+        <link>ronda_new</link>
+        <modulo>Ronda</modulo>
+        <clase>RondaAlta</clase>
+    </accion>
+    
+    <accion>
+        <nombre>RondaAdm</nombre>
+        <link>ronda_adm</link>
+        <modulo>Ronda</modulo>
+        <clase>RondaAdm</clase>
+    </accion>
+    
+    <accion>
+        <nombre>RondaDel</nombre>
+        <link>ronda_del</link>
+        <modulo>Ronda</modulo>
+        <clase>RondaDel</clase>
+    </accion>
+    
+	<accion>
+        <nombre>RondaMod</nombre>
+        <link>ronda_mod</link>
+        <modulo>Ronda</modulo>
+        <clase>RondaMod</clase>
+    </accion>
     
 </acciones>	

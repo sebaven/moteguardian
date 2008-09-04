@@ -102,6 +102,25 @@
         <rol>ADMINISTRADOR</rol>
     </permiso>
     
+    <!-- RONDA -->
+    
+    <permiso>
+        <accion>RondaAlta</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>
+    <permiso>
+        <accion>RondaAdm</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>
+    <permiso>
+        <accion>RondaDel</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>
+    <permiso>
+        <accion>RondaMod</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>
+    
 </permisos>
 
 	

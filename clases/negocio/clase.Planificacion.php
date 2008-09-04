@@ -25,8 +25,7 @@ class Planificacion extends AbstractEntity
     	'fecha_vigencia' => 'date',    
 		'dia_semana' => 'varchar',
 		'hora' => 'varchar',
-		'id_recoleccion' => 'int',
-		'id_envio' => 'int',
+		'id_ronda' => 'int',		
     	'baja_logica' => 'boolean'      
     );
 
@@ -35,8 +34,7 @@ class Planificacion extends AbstractEntity
     var $fecha_vigencia;
     var $dia_semana;
     var $hora;
-    var $id_recoleccion;
-    var $id_envio;
+    var $id_ronda;
     var $baja_logica;
     
     function toString() {
