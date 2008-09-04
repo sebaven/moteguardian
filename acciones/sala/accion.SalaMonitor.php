@@ -29,12 +29,14 @@ class SalaMonitor extends Action
 	function falsaAlarma(){
 		$logAlarmaDAO = new LogAlarmaDAO();		
 		$logAlarmaDAO->marcarAlarmasComoFalsas(); 
+		$this->inicializar();
 		$this->asignar('en_alarma','');
 	}
 	
 	function alarmaReal(){
 		$logAlarmaDAO = new LogAlarmaDAO();		
-		$logAlarmaDAO->marcarAlarmasComoReales(); 
+		$logAlarmaDAO->marcarAlarmasComoReales();
+		$this->inicializar(); 
 		$this->asignar('en_alarma','');		
 	}
 }

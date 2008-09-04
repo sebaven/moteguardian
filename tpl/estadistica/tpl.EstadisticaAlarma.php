@@ -32,11 +32,7 @@
 			</td>						
 		</tr>		        
         </table>
-            
-                
-        <br>
-        <div align="center" style="color:gray;"><i>Si no completa ning&uacute;n campo trae todos los datos</i></div>
-        <br>
+		<br/>        
         <div align="center">            
             <span class="botonGrad"><input type="submit" name="btnBuscar" value="Buscar" class="boton" /></span>    
             &nbsp;&nbsp;<span class="botonGrad"><a href="?accion=estadistica_alarma"><input type="button" value="Limpiar" class="boton"/></a></span>
