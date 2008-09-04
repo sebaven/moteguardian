@@ -72,7 +72,7 @@ class LogAlarmaDAO extends AbstractDAO
             $w[] = "l.timestamp_fin <= '$values[hasta]'"; 
         }
         
-        $sql = "SELECT d.codigo, l.timestamp_inicio as inicio, l.timestamp_fin as fin, l.es_falsa as falsa FROM log_alarma l INNER JOIN dispositivo d ON d.id = l.id_dispositivo_disparador ";
+        $sql = "SELECT d.codigo as codigo, l.timestamp_inicio as inicio, l.timestamp_fin as fin, l.es_falsa as falsa FROM log_alarma l INNER JOIN dispositivo d ON d.id = l.id_dispositivo_disparador ";
         if ($w)
         {
             $sql .= "WHERE " . implode(' AND ', $w) . " ";
