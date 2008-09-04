@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 01-09-2008 a las 00:02:37
+-- Tiempo de generación: 03-09-2008 a las 21:43:42
 -- Versión del servidor: 5.0.27
 -- Versión de PHP: 5.2.0
 -- 
@@ -22,10 +22,10 @@ CREATE TABLE `dispositivo` (
   `id_sala` bigint(11) default NULL,
   `estado` int(11) default NULL,
   `codigo` varchar(50) default NULL,
-  `tipo` int(11) default NULL COMMENT '2=MOTA;1=RFID;0=CAMARA',
-  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
+  `tipo` int(11) default NULL,
+  `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- 
 -- Volcar la base de datos para la tabla `dispositivo`
@@ -43,9 +43,9 @@ CREATE TABLE `guardia` (
   `codigo_tarjeta` varchar(50) default NULL,
   `nombre` varchar(255) default NULL,
   `id_usuario` bigint(20) default NULL,
-  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
+  `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- 
 -- Volcar la base de datos para la tabla `guardia`
@@ -64,9 +64,9 @@ CREATE TABLE `item_ronda` (
   `id_sala` bigint(20) default NULL,
   `duracion` int(11) default NULL,
   `orden` int(11) default NULL,
-  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
+  `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-);
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- 
 -- Volcar la base de datos para la tabla `item_ronda`
@@ -85,9 +85,9 @@ CREATE TABLE `log_alarma` (
   `timestamp_inicio` timestamp NULL default NULL,
   `timestamp_fin` timestamp NULL default NULL,
   `es_falsa` tinyint(1) default NULL,
-  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
+  `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- 
 -- Volcar la base de datos para la tabla `log_alarma`
@@ -105,9 +105,9 @@ CREATE TABLE `log_mota` (
   `id_mota` bigint(20) default NULL,
   `timestamp_inicio` timestamp NULL default NULL,
   `timestamp_fin` timestamp NULL default NULL,
-  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
+  `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- 
 -- Volcar la base de datos para la tabla `log_mota`
@@ -122,14 +122,13 @@ CREATE TABLE `log_mota` (
 
 CREATE TABLE `log_rfid` (
   `id` bigint(20) NOT NULL auto_increment,
-  `id_rfid` bigint(20) default NULL,
   `timestamp_inicio` timestamp NULL default NULL,
   `timestamp_fin` timestamp NULL default NULL,
-  `codigo_tarjeta` VARCHAR( 50 ) NOT NULL,
-  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
+  `codigo_tarjeta` varchar(50) NOT NULL,
+  `baja_logica` tinyint(4) NOT NULL default '0',
+  `id_rfid` bigint(20) default NULL,
   PRIMARY KEY  (`id`)
-);
-
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- 
 -- Volcar la base de datos para la tabla `log_rfid`
@@ -145,10 +144,9 @@ CREATE TABLE `log_rfid` (
 CREATE TABLE `rol` (
   `id` smallint(6) NOT NULL auto_increment,
   `descripcion` varchar(50) NOT NULL,
-  `baja_logica` tinyint(1) default '0',
-  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
+  `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-)  ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- 
 -- Volcar la base de datos para la tabla `rol`
@@ -169,9 +167,9 @@ CREATE TABLE `ronda` (
   `id` bigint(20) NOT NULL auto_increment,
   `id_guardia` bigint(20) default NULL,
   `id_planificacion` bigint(20) default NULL,
-  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
+  `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- 
 -- Volcar la base de datos para la tabla `ronda`
@@ -187,14 +185,70 @@ CREATE TABLE `ronda` (
 CREATE TABLE `sala` (
   `id` bigint(20) NOT NULL auto_increment,
   `descripcion` varchar(255) default NULL,
-  `baja_logica` TINYINT NOT NULL DEFAULT '0';,
+  `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=56 ;
 
 -- 
 -- Volcar la base de datos para la tabla `sala`
 -- 
 
+INSERT INTO `sala` (`id`, `descripcion`, `baja_logica`) VALUES 
+(1, 'Sala Mayor I', 0),
+(2, 'Sala Lateral Principal I', 0),
+(3, 'Exposiciones Temporales', 0),
+(4, 'Sala Mayor II', 0),
+(5, 'Sala ?valo', 0),
+(6, 'Sala Lateral Principal I', 0),
+(7, 'Sala Principal', 0),
+(8, 'Sala de Conciertos', 0),
+(9, 'Sala Murillo', 0),
+(10, 'Sala del Mirador', 0),
+(11, 'Sala Reliquias', 0),
+(12, 'Sala Barroco', 0),
+(13, 'Diapoteca', 0),
+(14, 'Sala de Invidente', 0),
+(15, 'Sala Homenaje', 0),
+(16, 'Sala Peremne', 0),
+(17, 'Sala de Recuerdos', 0),
+(18, 'Sala de Reuni?n', 0),
+(19, 'Sala Rinc?n', 0),
+(20, 'Sala General', 0),
+(21, 'Sala Ac?stica', 0),
+(22, 'Sala Capitular', 0),
+(23, 'Sala de Eventos', 0),
+(24, 'Sala Media', 0),
+(25, 'Sala de Simposios', 0),
+(26, 'Sala Vidriada', 0),
+(27, 'Sala Vel?zquez', 0),
+(28, 'Sala Panor?mica', 0),
+(29, 'Sala de las Musas', 0),
+(30, 'Patio', 0),
+(31, 'Corredor C1', 0),
+(32, 'Corredor C2', 0),
+(33, 'Corredor C3', 0),
+(34, 'Corredor C4', 0),
+(35, 'Hemeroteca', 0),
+(36, 'Videoteca', 0),
+(37, 'Biblioteca', 0),
+(38, 'Sala Bellas Artes', 0),
+(39, 'Fonoteca', 0),
+(40, 'Mapoteca', 0),
+(41, 'Sala Jer?nimos', 0),
+(42, 'Escalera A', 0),
+(43, 'Sala Mini I', 0),
+(44, 'Sala Colonial', 0),
+(45, 'Sala L?pidas', 0),
+(46, 'Dep?sito D2', 0),
+(47, 'Dep?sito D1', 0),
+(48, 'Dep?sito D3', 0),
+(49, 'Hall de Entrada', 0),
+(50, 'Sala de Exposiciones', 0),
+(51, 'Auditorio', 0),
+(52, 'Vest?bulo Principal', 0),
+(53, 'Sala del Bot?nico', 0),
+(54, 'Pasillo P1', 0),
+(55, 'Hall Lateral', 0);
 
 -- --------------------------------------------------------
 
@@ -215,7 +269,7 @@ CREATE TABLE `usuario` (
   `id_rol` smallint(6) NOT NULL,
   `baja_logica` tinyint(1) default '0',
   PRIMARY KEY  (`id`)
-) ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- 
 -- Volcar la base de datos para la tabla `usuario`
@@ -223,64 +277,3 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `usuario`, `clave`, `nombre`, `apellido`, `email`, `otros_mails`, `telefono1`, `telefono2`, `id_rol`, `baja_logica`) VALUES 
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Admin', 'Admin', 'cgalli@cys.com.ar', NULL, NULL, NULL, 1, 0);
-
-
--- 
--- Volcar la base de datos para la tabla `sala`
--- 
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (1, 'Sala Mayor I');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (2, 'Sala Lateral Principal I');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (3, 'Exposiciones Temporales');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (4, 'Sala Mayor II');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (5, 'Sala Óvalo');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (6, 'Sala Lateral Principal I');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (7, 'Sala Principal');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (8, 'Sala de Conciertos');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (9, 'Sala Murillo');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (10, 'Sala del Mirador');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (11, 'Sala Reliquias');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (12, 'Sala Barroco');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (13, 'Diapoteca');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (14, 'Sala de Invidente');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (15, 'Sala Homenaje');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (16, 'Sala Peremne');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (17, 'Sala de Recuerdos');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (18, 'Sala de Reunión');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (19, 'Sala Rincón');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (20, 'Sala General');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (21, 'Sala Acústica');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (22, 'Sala Capitular');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (23, 'Sala de Eventos');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (24, 'Sala Media');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (25, 'Sala de Simposios');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (26, 'Sala Vidriada');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (27, 'Sala Velázquez');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (28, 'Sala Panorámica');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (29, 'Sala de las Musas');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (30, 'Patio');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (31, 'Corredor C1');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (32, 'Corredor C2');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (33, 'Corredor C3');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (34, 'Corredor C4');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (35, 'Hemeroteca');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (36, 'Videoteca');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (37, 'Biblioteca');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (38, 'Sala Bellas Artes');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (39, 'Fonoteca');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (40, 'Mapoteca');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (41, 'Sala Jerónimos');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (42, 'Escalera A');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (43, 'Sala Mini I');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (44, 'Sala Colonial');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (45, 'Sala Lápidas');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (46, 'Depósito D2');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (47, 'Depósito D1');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (48, 'Depósito D3');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (49, 'Hall de Entrada');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (50, 'Sala de Exposiciones');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (51, 'Auditorio');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (52, 'Vestíbulo Principal');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (53, 'Sala del Botánico');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (54, 'Pasillo P1');
-INSERT INTO `sala` (`id`, `descripcion`) VALUES (55, 'Hall Lateral');
-
