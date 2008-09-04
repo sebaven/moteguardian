@@ -12,7 +12,7 @@ class ListadoRondasRealizadas extends Listado
 				
 		$this->orden = "orden";
 		$this->ex_pasaget = array("orden");
-		$this->mostrar_total = true;
+		$this->mostrar_total = false;
 		$this->titulo_general= "";
 		$this->mensaje_total = 'Cantidad total de Salas visitadas: ';
 		$this->seleccionar_js = "";
@@ -20,10 +20,10 @@ class ListadoRondasRealizadas extends Listado
 		$ronda = new LogRfidDAO();
 		
 		$sql = $ronda->getSqlRondasRealizadas($params);		
-		$order_default = "codigo";
+		$order_default = "tarjeta , inicio";
 		$orden_tipo = "asc";
-		$cfilas = "5";
-		$maxpag = "5";
+		$cfilas = "50";
+		$maxpag = "50";
 
 		// Columnas
         $columnas["Nombre"] = array("nombre" =>"Nombre",
