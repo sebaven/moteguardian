@@ -24,4 +24,5 @@ define("CONST_AVERIADO", 1);
 define("CONST_NUEVO",2);
 define("CONST_EN_ALARMA",3);
 define("CONST_EN_USO",4);
+define("CONST_APAGADO",5);
 ?>

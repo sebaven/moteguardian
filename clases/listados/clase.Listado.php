@@ -251,6 +251,9 @@ class Listado
 									case CONST_EN_ALARMA:
 										$img ="<img src='imagenes/rojo.png"."' border='0' align='absmiddle' width='15px'>"; 
 										break;
+									case CONST_APAGADO:
+										$img ="<img src='imagenes/gris.png"."' border='0' align='absmiddle' width='15px'>"; 
+										break;
 								}
 							}
 							
