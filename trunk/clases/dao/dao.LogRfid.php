@@ -55,6 +55,7 @@ class LogRfidDAO extends AbstractDAO
         $sql .= "INNER JOIN dispositivo d ON d.id = l.id_rfid ";
         $sql .= "INNER JOIN sala s ON d.id_sala = s.id ";
 
+
         if ($w)
         {
             $sql .= "WHERE " . implode(' AND ', $w) . " ";
