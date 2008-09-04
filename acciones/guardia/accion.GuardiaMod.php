@@ -8,7 +8,7 @@ class GuardiaMod extends Action {
 
 	function inicializar() {
 		// Titulo del template
-		$this->asignar('accion_guardias', "Modificaci&oacute;n");
+		$this->asignar('options_usuarios', ComboUsuario());
 		 
 		$guardia = new Guardia(intval($_GET['id']));
 		// Cargo los datos del dispositivo en la pantalla

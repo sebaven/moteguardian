@@ -11,13 +11,14 @@ class GuardiaAlta extends Action {
         $this->asignar('accion_guardias', "Alta");
 
 		// Cargo los combos
-        $this->asignar('options_usuario', ComboUsuario());        
+        $this->asignar('options_usuarios', ComboUsuario());        
     }
 
     function guardarGuardia()
     {        
         $guardia = new Guardia();        
         $guardia->setFields($_POST);
+        $guardia->baja_logica = FALSE_;
         return $guardia->save();
     }
 

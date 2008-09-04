@@ -1,9 +1,9 @@
 <?
 include_once BASE_DIR."clases/listados/clase.Listados.php";
 
-class DispositivoAdm extends Action
+class GuardiaAdm extends Action
 {
-	var $tpl = "tpl/dispositivo/tpl.DispositivoAdm.php";
+	var $tpl = "tpl/guardia/tpl.GuardiaAdm.php";
 
 	function inicializar()
 	{

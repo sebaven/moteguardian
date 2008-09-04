@@ -27,7 +27,7 @@ class DispositivoMod extends Action {
 		
 		//Se copian todos los valores ingresados
 		$dispositivo->setFields($_POST);
-		
+				
 		$params["id"] = $dispositivo->id;
 		if ($dispositivo->update()){
 			$nextAction->setNextAction("DispositivoAdm", "modificacion.dispositivo.ok", $params);			
