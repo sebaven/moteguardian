@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Servidor: localhost
--- Tiempo de generación: 03-09-2008 a las 21:43:42
+-- Tiempo de generación: 03-09-2008 a las 23:12:18
 -- Versión del servidor: 5.0.27
 -- Versión de PHP: 5.2.0
 -- 
@@ -138,6 +138,28 @@ CREATE TABLE `log_rfid` (
 -- --------------------------------------------------------
 
 -- 
+-- Estructura de tabla para la tabla `planificacion`
+-- 
+
+CREATE TABLE `planificacion` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `id_ronda` bigint(20) default NULL,
+  `dia_absoluto` date default NULL,
+  `dia_semana` varchar(15) default NULL,
+  `hora` time NOT NULL,
+  `baja_logica` tinyint(1) NOT NULL,
+  `fecha_vigencia` date NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `planificacion`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
 -- Estructura de tabla para la tabla `rol`
 -- 
 
@@ -166,7 +188,6 @@ INSERT INTO `rol` (`id`, `descripcion`, `baja_logica`) VALUES
 CREATE TABLE `ronda` (
   `id` bigint(20) NOT NULL auto_increment,
   `id_guardia` bigint(20) default NULL,
-  `id_planificacion` bigint(20) default NULL,
   `baja_logica` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
