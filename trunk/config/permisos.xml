@@ -120,7 +120,13 @@
         <accion>RondaMod</accion>
         <rol>ADMINISTRADOR</rol>
     </permiso>
+    <!-- ESTADISTICAS -->
     
+    <permiso>
+        <accion>EstadisticaRondaRealizada</accion>
+        <rol>ADMINISTRADOR</rol>
+    </permiso>
+
 </permisos>
 
 	

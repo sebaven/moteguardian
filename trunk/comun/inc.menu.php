@@ -66,6 +66,17 @@
         <? } ?>
     </ul>
 </div>
-                    
+           
+<!--  MENU ESTADISTICAS -->
+
+<div class="silverheader"><a href="#">Estad&iacute;sticas</a></div>
+<div class="submenu">
+    <ul>
+        <? if (RegistryHelper::getRolUsuario()->id==ROL_ID_ADMINISTRADOR) {?>
+        <li><a href="index.php?accion=estadistica_ronda_realizada">Rondas Realizadas</a></li>
+        <? } ?>
+    </ul>
+</div>                          
+         
 </div>
 <?}?>
