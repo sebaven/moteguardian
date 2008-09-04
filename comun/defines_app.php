@@ -1,7 +1,7 @@
 <?php
 define('ROL_ID_ADMINISTRADOR', '1');
 define('ROL_ID_GUARDIA','2');
-define('ROL_ID_AUTORIDAD','2');
+define('ROL_ID_AUTORIDAD','3');
 define('TRUE_', 1);
 define('FALSE_', 0);
 

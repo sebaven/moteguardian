@@ -4,30 +4,40 @@
 	
 	<permiso>
 		<accion>Login</accion>
-		<rol>ADMINISTRADOR</rol>		
+		<rol>ADMINISTRADOR</rol>
+		<rol>GUARDIA</rol>
+		<rol>AUTORIDAD</rol>				
 	</permiso>
 	<permiso>
 		<accion>Logout</accion>
-		<rol>ADMINISTRADOR</rol>		
+		<rol>ADMINISTRADOR</rol>
+		<rol>GUARDIA</rol>
+		<rol>AUTORIDAD</rol>		
 	</permiso>
 	<permiso>
 		<accion>Inicio</accion>		
 		<rol>ADMINISTRADOR</rol>
+		<rol>GUARDIA</rol>
+		<rol>AUTORIDAD</rol>
 	</permiso>
 	<permiso>
 		<accion>CambiarPassword</accion>
-		<rol>ADMINISTRADOR</rol>		
+		<rol>ADMINISTRADOR</rol>
+		<rol>GUARDIA</rol>
+		<rol>AUTORIDAD</rol>		
 	</permiso>
 	<permiso>
 		<accion>PermisoDenegado</accion>
 		<rol>ADMINISTRADOR</rol>
+		<rol>GUARDIA</rol>
+		<rol>AUTORIDAD</rol>
 	</permiso>	
 	
 	<!-- U S U A R I O S -->
 		
 	<permiso>
 		<accion>UsuarioAlta</accion>
-		<rol>ADMINISTRADOR</rol>
+		<rol>ADMINISTRADOR</rol>		
 	</permiso>
 	<permiso>
 		<accion>UsuarioMod</accion>
@@ -62,11 +72,14 @@
 	<permiso>
 		<accion>SalaSelect</accion>
 		<rol>ADMINISTRADOR</rol>
+		<rol>GUARDIA</rol>
+		<rol>AUTORIDAD</rol>		
 	</permiso>
 	<permiso>
 		<accion>SalaMonitor</accion>
 		<rol>GUARDIA</rol>
 		<rol>ADMINISTRADOR</rol>
+		<rol>AUTORIDAD</rol>
 	</permiso>
     
     
@@ -85,19 +98,7 @@
 		<rol>ADMINISTRADOR</rol>
 	</permiso>
 
-	<!-- SALA -->
-	
-	<permiso>
-		<accion>SalaSelect</accion>
-		<rol>ADMINISTRADOR</rol>
-	</permiso>
-	<permiso>
-		<accion>SalaMonitior</accion>
-		<rol>ADMINISTRADOR</rol>
-		<rol>GUARDIA</rol>
-	</permiso>
-    
-    <!-- DISPOSITIVO -->
+	<!-- DISPOSITIVO -->
     
     <permiso>
         <accion>DispositivoAlta</accion>
@@ -144,6 +145,7 @@
     <permiso>
         <accion>RondaAdm</accion>
         <rol>ADMINISTRADOR</rol>
+		<rol>GUARDIA</rol>			
     </permiso>
     <permiso>
         <accion>RondaDel</accion>
@@ -157,11 +159,13 @@
     
     <permiso>
         <accion>EstadisticaRondaRealizada</accion>
-        <rol>ADMINISTRADOR</rol>
+        <rol>ADMINISTRADOR</rol>		
+		<rol>AUTORIDAD</rol>	
     </permiso>
     <permiso>
-        <accion>EstadisticaAlarma</accion>
-        <rol>ADMINISTRADOR</rol>
+        <accion>EstadisticaAlarma</accion>        
+        <rol>ADMINISTRADOR</rol>		
+		<rol>AUTORIDAD</rol>	
     </permiso>    
                
     <!-- ALARMA -->
