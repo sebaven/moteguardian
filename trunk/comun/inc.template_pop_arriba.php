@@ -5,7 +5,7 @@
 <html lang="es">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<title>SRDF</title>
+		<title>MoteGuardian</title>
 		<link href="css/estilopopup.css" rel="stylesheet" type="text/css">
 		<script type="text/javascript" src="js/menu.js"></script>
 		<script type="text/javascript" src="js/funciones.js"></script>
