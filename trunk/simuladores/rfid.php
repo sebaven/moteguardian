@@ -22,14 +22,14 @@
 				// Se actualiza el estado del Lector RFID
 				$str_sql = 'UPDATE `dispositivo` SET `estado`=\'' . CONST_EN_USO . '\' WHERE `id`=\''.$_GET['idRFID'].'\' LIMIT 1;';
 				$db->leer($str_sql);
-				$mensaje_resultado='Operación de encendido de Lector RFID "' . $_GET['idRFID'] . '" recibida';
+				$mensaje_resultado.='Operación de encendido de Lector RFID "' . $_GET['idRFID'] . '" recibida<br/>';
 			} else if ($_GET['estado'] == CONST_APAGADO) { // APAGAR
 				// Se actualiza el estado del Lector RFID
 				$str_sql = 'UPDATE `dispositivo` SET `estado`=\'' . CONST_APAGADO . '\' WHERE `id`=\''.$_GET['idRFID'].'\' LIMIT 1;';
 				$db->leer($str_sql);
-				$mensaje_resultado='Operación de apagado de Lector RFID "' . $_GET['idRFID'] . '" recibida';
+				$mensaje_resultado.='Operación de apagado de Lector RFID "' . $_GET['idRFID'] . '" recibida<br/>';
 			} else {
-				$mensaje_error='ERROR: La operación recibida es inválida';
+				$mensaje_error.='ERROR: La operación recibida es inválida<br/>';
 			}
 		}
 		else if (!empty($_GET['enviar_evento']) && isset($_GET['enviar_evento'])) {
@@ -38,18 +38,18 @@
 					// Se inserta la nueva detección en la tabla log_rfid
 					$str_sql = 'INSERT INTO `log_rfid` (`id_rfid` , `timestamp_inicio`, `codigo_tarjeta`) VALUES (\''.$_GET['idRFID'].'\', NOW( ), \''.$_GET['lectura'].'\');';
 					$db->leer($str_sql);
-					$mensaje_resultado='Notificación de detección de Lector RFID "' . $_GET['idRFID'] . '" recibida';
+					$mensaje_resultado.='Notificación de detección de Lector RFID "' . $_GET['idRFID'] . '" recibida<br/>';
 				} else if ($_GET['evento'] == '0') { // FIN DETECCIÓN
 					// Se escribe el timestamp_fin de la última detección no finalizada de este Lector RFID
 					// IMPORTANTE: En la consulta interviene una tabla intermedia 'aux_log_rfid' como workaround a un problema al seleccionar desde la tabla a actualizar. Extraído de: http://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/
 					$str_sql = 'UPDATE `log_rfid` SET `timestamp_fin`=NOW( ) WHERE `id_rfid`=\''.$_GET['idRFID'].'\' AND `codigo_tarjeta` = \''.$_GET['lectura'].'\' AND `timestamp_fin` IS NULL AND `timestamp_inicio`=(SELECT ti FROM (SELECT MAX(`timestamp_inicio`) AS ti FROM `log_rfid` WHERE `id_rfid`=\''.$_GET['idRFID'].'\' AND `codigo_tarjeta` = \''.$_GET['lectura'].'\') AS aux_log_rfid) LIMIT 1;';
 					$db->leer($str_sql);
-					$mensaje_resultado='Notificación de fin de detección de Lector RFID "' . $_GET['idRFID'] . '" recibida';
+					$mensaje_resultado.='Notificación de fin de detección de Lector RFID "' . $_GET['idRFID'] . '" recibida<br/>';
 				} else {
-					$mensaje_error='ERROR: El evento notificado es inválido';
+					$mensaje_error.='ERROR: El evento notificado es inválido<br/>';
 				}
 			} else {
-				$mensaje_error='ERROR: No se ha especificado la lectura realizada';
+				$mensaje_error.='ERROR: No se ha especificado la lectura realizada<br/>';
 			}
 		}
 	}
@@ -115,7 +115,7 @@
 				<input type="submit" name="enviar_estado" value="Apagar" />
 				<?
 				// Se busca el último evento del Lector RFID:
-				$str_sql = 'SELECT * FROM `log_rfid` WHERE `id_rfid`=\''.$_GET['idRFID'].'\' AND `codigo_tarjeta` = \''.$_GET['lectura'].'\' AND `timestamp_inicio`=(SELECT MAX(`timestamp_inicio`) AS ti FROM `log_rfid` WHERE `id_rfid`=\''.$_GET['idRFID'].'\' AND `codigo_tarjeta` = \''.$_GET['lectura'].'\') AND `timestamp_fin` IS NULL LIMIT 1;';
+				$str_sql = 'SELECT * FROM `log_rfid` WHERE `id_rfid`=\''.$_GET['idRFID'].'\' AND `codigo_tarjeta` = \''.$_GET['lectura'].'\' AND `timestamp_fin` IS NULL AND `timestamp_inicio`=(SELECT MAX(`timestamp_inicio`) AS ti FROM `log_rfid` WHERE `id_rfid`=\''.$_GET['idRFID'].'\' AND `codigo_tarjeta` = \''.$_GET['lectura'].'\') LIMIT 1;';
 				$rs = $db->leer($str_sql);
 				$evento_rfid_actual = 0; // NO DETECTANDO...
 				while($r = $db->reg_array($rs))
@@ -143,14 +143,14 @@
 				<?
 			}
 			else if ($estado_rfid_actual!=-1) {
-				$mensaje_error.='Estado desconocido de Lector RFID...';
+				$mensaje_error.='Debe cambiar el estado del Lector RFID para poder utilizarlo en el simulador...<br/>';
 			}
 			?>
 		</form>
 		<?
 	}
 	else {
-		$mensaje_error='No hay Lectores RFID cargados en el sistema...';
+		$mensaje_error.='No hay Lectores RFID cargados en el sistema...<br/>';
 	}
 	?>
 		<span style="color: green;"><?=$mensaje_resultado?></span>
