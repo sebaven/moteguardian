@@ -2,7 +2,7 @@
  * Generales
  ------------------------------------------------------------*/
 // Inicializo el timer cuando se carga la página
-TimerID = window.setTimeout("refrezcarSiEsNecesario()", 500);
+TimerID = window.setTimeout("refrezcarSiEsNecesario()", 1000);
 
 // Variable para conectarme con el servidor
 var conexion1;
@@ -31,7 +31,7 @@ function atenderRespuestaAjax()
 		} 
 		else{
 			// Vuelvo a iniciar el timer			
-			TimerID = window.setTimeout("refrezcarSiEsNecesario()", 500);
+			TimerID = window.setTimeout("refrezcarSiEsNecesario()", 1000);
 		}		
 		
 	}
