@@ -145,6 +145,7 @@
     <permiso>
         <accion>RondaAdm</accion>
         <rol>ADMINISTRADOR</rol>
+        <rol>AUTORIDAD</rol>
 		<rol>GUARDIA</rol>			
     </permiso>
     <permiso>

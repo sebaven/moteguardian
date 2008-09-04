@@ -29,7 +29,7 @@
 			<td align="center" width="40%">
 				Desde					
 				<input type="text" id="fecha_desde" name="fecha_desde" readonly="readonly" size="10" value="<?= $fecha_desde ?>" />
-				<button type="button" id="mostrarCalendario_desde">...</button><?= getCalendarDefinition( "fecha_desde", "mostrarCalendario_desde"); ?>
+				<button type="button" id="mostrarCalendario_desde"><img src="imagenes/calendario.png"/></button><?= getCalendarDefinition( "fecha_desde", "mostrarCalendario_desde"); ?>
 				<select id="horas_desde" name="horas_desde" ><? ComboControl::Display($options_horas_desde, $id_horas_desde)?></select> :
 				<select id="minutos_desde" name="minutos_desde" ><? ComboControl::Display($options_minutos_desde, $id_minutos_desde)?></select>
 			</td>					
@@ -38,7 +38,7 @@
 			<td align="center">
 				Hasta		
 				<input type="text" id="fecha_hasta" name="fecha_hasta" readonly="readonly" size="10" value="<?= $fecha_hasta ?>" />
-				<button type="button" id="mostrarCalendario_hasta">...</button><?= getCalendarDefinition( "fecha_hasta", "mostrarCalendario_hasta"); ?>
+				<button type="button" id="mostrarCalendario_hasta"><img src="imagenes/calendario.png"/></button><?= getCalendarDefinition( "fecha_hasta", "mostrarCalendario_hasta"); ?>
 				<select id="horas_hasta" name="horas_hasta" ><? ComboControl::Display($options_horas_hasta, $id_horas_hasta)?></select> :
 				<select id="minutos_hasta" name="minutos_hasta" ><? ComboControl::Display($options_minutos_hasta, $id_minutos_hasta)?></select>
 			</td>						
