@@ -3,6 +3,7 @@ include_once BASE_DIR ."clases/listados/clase.ListadoUsuarios.php";
 include_once BASE_DIR ."clases/listados/clase.ListadoPlanificacion.php";
 include_once BASE_DIR ."clases/listados/clase.ListadoDispositivos.php";
 include_once BASE_DIR ."clases/listados/clase.ListadoGuardias.php";
+include_once BASE_DIR ."clases/listados/clase.ListadoRondasRealizadas.php";
 
 class Listados
 {		

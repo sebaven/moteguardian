@@ -190,5 +190,13 @@
         <modulo>Ronda</modulo>
         <clase>RondaMod</clase>
     </accion>
-    
+    <!-- E S T A D I S T I C A S -->
+        
+    <accion>
+        <nombre>EstadisticaRondaRealizada</nombre>
+        <link>estadistica_ronda_realizada</link>
+        <modulo>Estadistica</modulo>
+        <clase>EstadisticaRondaRealizada</clase>
+    </accion>
+
 </acciones>	
