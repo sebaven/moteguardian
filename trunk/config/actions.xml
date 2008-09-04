@@ -131,4 +131,35 @@
         <clase>DispositivoMod</clase>
     </accion>
     
+    <!--  G U A R D I A -->
+        
+    <accion>
+        <nombre>GuardiaAlta</nombre>
+        <link>guardia_new</link>
+        <modulo>Guardia</modulo>
+        <clase>GuardiaAlta</clase>
+    </accion>
+    
+    <accion>
+        <nombre>GuardiaAdm</nombre>
+        <link>guardia_adm</link>
+        <modulo>Guardia</modulo>
+        <clase>GuardiaAdm</clase>
+    </accion>
+    
+    <accion>
+        <nombre>GuardiaDel</nombre>
+        <link>guardia_del</link>
+        <modulo>Guardia</modulo>
+        <clase>GuardiaDel</clase>
+    </accion>
+    
+	<accion>
+        <nombre>GuardiaMod</nombre>
+        <link>guardia_mod</link>
+        <modulo>Guardia</modulo>
+        <clase>GuardiaMod</clase>
+    </accion>
+    
+    
 </acciones>	
