@@ -122,6 +122,9 @@
 					<input type="submit" name="enviar_estado" value="Encender" />
 					<?
 				}
+				else if ($estado_mota_actual!=-1) {
+					$mensaje_error.='Estado desconocido de mota...';
+				}
 				?>
 		</form>
 		<?

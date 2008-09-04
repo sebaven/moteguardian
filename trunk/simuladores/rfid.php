@@ -142,6 +142,9 @@
 				<input type="submit" name="enviar_estado" value="Encender" />
 				<?
 			}
+			else if ($estado_rfid_actual!=-1) {
+				$mensaje_error.='Estado desconocido de Lector RFID...';
+			}
 			?>
 		</form>
 		<?
