@@ -78,6 +78,7 @@ function ComboEstadoDispositivo()
 		CONST_AVERIADO 	=> "Averiado",
 		CONST_NUEVO 	=> "Nuevo",
 		CONST_EN_ALARMA => "En alarma",
+		CONST_APAGADO	=> "Apagado",
 		CONST_EN_USO 	=> "En uso");
 }
 

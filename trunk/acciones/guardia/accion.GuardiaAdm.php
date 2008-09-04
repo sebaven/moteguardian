@@ -8,7 +8,7 @@ class GuardiaAdm extends Action
 	function inicializar()
 	{
 		// Cargo los combos        
-        $this->asignar('options_usuario', ComboUsuario());        
+        $this->asignar('options_usuarios', ComboUsuario());        
 	}
 
 	
