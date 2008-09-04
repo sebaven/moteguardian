@@ -33,14 +33,16 @@ class DispositivoDAO extends AbstractDAO
         }
                       
         $w[] = "d.baja_logica = '".FALSE_."'";
+        $w[] = "s.baja_logica = '".FALSE_."'";
             
         $sql  = "SELECT d.id, ";
         $sql .= "       d.codigo, ";
         $sql .= "       d.tipo,";
         $sql .= "       d.descripcion,";
-        $sql .= "       d.id_sala,";
+        $sql .= "       s.descripcion as sala,";
         $sql .= "       d.estado ";
         $sql .= "FROM dispositivo d ";
+        $sql .= 	"INNER JOIN sala s ON d.id_sala = s.id ";
 
         if ($w)
         {
