@@ -1,10 +1,6 @@
 <?
 include_once BASE_DIR ."clases/negocio/clase.Dispositivo.php";
 include_once BASE_DIR ."clases/listados/clase.Listados.php";
-include_once BASE_DIR ."clases/service/clase.Logger.php";
-include_once BASE_DIR ."validadores/ShowError.php";
-include_once BASE_DIR ."comun/defines_acciones_logger.php";
-
 
 class DispositivoMod extends Action {
 	var $tpl = "tpl/dispositivo/tpl.DispositivoAlta.php";
