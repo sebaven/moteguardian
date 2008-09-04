@@ -13,14 +13,14 @@ class LogAlarmaDAO extends AbstractDAO
         $w = array();
                        
         if($values['desde']){
-            $w[] = "l.timestamp_inicio >= '$values[desde]'";            
+            $w[] = "l.timestamp_inicio '".$values['desde']."'";            
         }
             
         if($values['hasta']){
-            $w[] = "l.timestamp_fin <= '$values[hasta]'"; 
+            $w[] = "l.timestamp_fin <= '".$values['hasta']."'"; 
         }
         
-        $w[] = "es_falsa='".FALSE_."'";
+        $w[] = "l.es_falsa='".FALSE_."'";
                       
         $sql = "SELECT count(*) as reales FROM log_alarma l ";
         if ($w)
@@ -39,11 +39,11 @@ class LogAlarmaDAO extends AbstractDAO
         $w = array();
                        
         if($values['desde']){
-            $w[] = "l.timestamp_inicio >= '$values[desde]'";            
+            $w[] = "l.timestamp_inicio '".$values['desde']."'";            
         }
             
         if($values['hasta']){
-            $w[] = "l.timestamp_fin <= '$values[hasta]'"; 
+            $w[] = "l.timestamp_fin <= '".$values['hasta']."'"; 
         }
         
         $w[] = "es_falsa='".TRUE_."'";
@@ -98,20 +98,18 @@ class LogAlarmaDAO extends AbstractDAO
     
 	
     function marcarAlarmasComoFalsas()
-    {
-    	$ahora = new Fecha();
-    	
+    {    	
 		$sql =
 				"UPDATE log_alarma ".
-				"SET timestamp_fin = '".$ahora->dateToString()."', ".
-					"es_falsa = '".TRUE_."' ";
+				"SET timestamp_fin = NOW( ), ".
+					"es_falsa = '".TRUE_."' ".
 				"WHERE timestamp_fin IS NULL ";					
     	
     	$this->getEntity()->_db->leer($sql);
     	
     	$sql =
 				"UPDATE log_mota ".
-				"SET timestamp_fin = '".$ahora->dateToString()."' ".					
+				"SET timestamp_fin = NOW( ) ".					
 				"WHERE timestamp_fin IS NULL ";
     	
     	$this->getEntity()->_db->leer($sql);
@@ -125,21 +123,20 @@ class LogAlarmaDAO extends AbstractDAO
 	}
 	
     function marcarAlarmasComoReales()
-    {
-    	$ahora = new Fecha();
+    {       	
+    	$sql =
+				"UPDATE log_mota ".
+				"SET timestamp_fin = NOW( ) ".					
+				"WHERE timestamp_fin IS NULL ";
+    	
+    	$this->getEntity()->_db->leer($sql);
     	
 		$sql =
 				"UPDATE log_alarma ".
-				"SET timestamp_fin = '".$ahora->dateToString()."', ".
-					"es_falsa = '".FALSE_."' ";
+				"SET timestamp_fin = NOW( ), ".
+					"es_falsa = '".FALSE_."' ".
 				"WHERE timestamp_fin IS NULL ";					
     		
-    	$this->getEntity()->_db->leer($sql);
-    	
-    	$sql =
-				"UPDATE log_mota ".
-				"SET timestamp_fin = '".$ahora->dateToString()."' ".					
-				"WHERE timestamp_fin IS NULL ";
     	
     	$this->getEntity()->_db->leer($sql);
 
@@ -148,8 +145,7 @@ class LogAlarmaDAO extends AbstractDAO
 				"SET estado = '".CONST_EN_USO."' ".    						
 				"WHERE estado = '".CONST_EN_ALARMA."' ";
     	
-    	$this->getEntity()->_db->leer($sql);
-    	
+    	$this->getEntity()->_db->leer($sql);   	
 	}
 	
 }
