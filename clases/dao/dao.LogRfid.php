@@ -11,7 +11,14 @@ class LogRfidDAO extends AbstractDAO
     function getSqlRondasRealizadas($values = '')
     {
         $w = array();
-        
+                       
+        if($values['nombre']){
+            $w[] = "g.nombre LIKE '%".addEscapeosParaLike($values['nombre'])."%'";            
+        }
+            
+        if($values['codigo_tarjeta']){
+            $w[] = "g.codigo_tarjeta LIKE '%".addEscapeosParaLike($values['codigo_tarjeta'])."%'"; 
+        }
         /*if($values['descripcion']){
             $w[] = "descripcion LIKE '%".addEscapeosParaLike($values['usuario'])."%'";            
         }
@@ -35,14 +42,16 @@ class LogRfidDAO extends AbstractDAO
         $w[] = "l.baja_logica = '".FALSE_."'";                                              
         $w[] = "d.baja_logica = '".FALSE_."'";
         $w[] = "s.baja_logica = '".FALSE_."'";
-            
+        $w[] = "g.baja_logica = '".FALSE_."'";
 
         $sql  = "SELECT l.id, ";
         $sql .= "       l.timestamp_inicio as inicio, ";
         $sql .= "       l.timestamp_fin as fin,";
         $sql .= "       l.codigo_tarjeta as tarjeta,";
+        $sql .= "       g.nombre as nombre,";       
         $sql .= "       s.descripcion as sala ";
         $sql .= "FROM log_rfid l ";
+        $sql .= "INNER JOIN guardia g ON g.codigo_tarjeta = l.codigo_tarjeta ";
         $sql .= "INNER JOIN dispositivo d ON d.id = l.id_rfid ";
         $sql .= "INNER JOIN sala s ON d.id_sala = s.id ";
 
