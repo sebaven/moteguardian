@@ -12,14 +12,13 @@ class ListadoPlanificacion extends Listado
 		// Cargar la consulta para el listado
 		$sql = $planificacionDAO->getSqlPlanificaciones($params);
 
-		// Configuracion
-		$this->id = 2;
+		// Configuracion		
 		$this->mensaje = "No se ha agregado ninguna planificaci&oacute;n";
 		$this->orden = "orden";
 		$this->ex_pasaget = array("orden");
-		$cfilas = "5";
+		$cfilas = "20";
 		$maxpag = "5";
-		$this->mostrar_total = true;
+		$this->mostrar_total = false;
 		$this->titulo_general= "";
 		$this->mensaje_total = 'Total de Planificaciones: ';
 		$order_default = "id";
@@ -79,12 +78,11 @@ class ListadoPlanificacion extends Listado
 								"dato_width" => "5%",
 						   		"dato_foto"=>"imagenes/eliminar.png");
 			
-		$params['accion'] = $_GET['accion'];
-		$params['id_recoleccion'] = $_REQUEST['id_recoleccion'];		  	
-		$params['offset'.$this->id] = $_GET['offset'.$this->id];
+		$vectorParche = $_GET;
+		$vectorParche['id_ronda'] = $params;
 		
 		// Cargar parametros
-		$this->datos($sql, $params, $columnas, $cfilas, $maxpag, $order_default, $orden_tipo);
+		$this->datos($sql, $vectorParche, $columnas, $cfilas, $maxpag, $order_default, $orden_tipo);
 	}
 }
 ?>

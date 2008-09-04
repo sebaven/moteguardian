@@ -1,5 +1,6 @@
 <?php
 include_once BASE_DIR."clases/negocio/clase.Planificacion.php";
+include_once BASE_DIR."clases/util/clase.FechaHelper.php";
 
 class PlanificacionDAO extends AbstractDAO
 {
@@ -17,7 +18,7 @@ class PlanificacionDAO extends AbstractDAO
 		$sql  = "SELECT * ";
 		$sql .= "FROM planificacion ";
 		$sql .= "WHERE baja_logica = '".FALSE_."' ";
-		$sql .= 	"AND fecha_vigencia <= '".$fechaDesde->toString()."' ";
+		$sql .= 	"AND fecha_vigencia >= '".$fechaDesde->toString()."' ";
 		$sql .= 	"AND (";
 
 		$diaDesde = $fechaDesde->diaDeLaSemana;
@@ -62,7 +63,22 @@ class PlanificacionDAO extends AbstractDAO
 		$res = $entity->_db->leer($sql);
 
 		// *** Convertir el record set en un array asociativo y devolverlo *** 
-		return $this->_rs2Collection($res);
+		return $this->_rs2Collection($res);	
+	}
+	
+	function getSqlPlanificaciones($id_ronda) 
+	{		
+		$sql = "SELECT ";		
+		$sql .= 	"p.id, ";
+		$sql .= 	"p.dia_absoluto, ";
+		$sql .= 	"p.dia_semana, ";
+		$sql .= 	"p.hora, ";
+		$sql .= 	"p.fecha_vigencia ";		
+		$sql .= "FROM planificacion p ";
+		$sql .= "WHERE p.baja_logica = '".FALSE_."' ";		
+		$sql .= 	"AND p.id_ronda = '".addslashes($id_ronda)."' ";
+		
+		return $sql;		
 	}
 }
 ?>

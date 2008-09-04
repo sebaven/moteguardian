@@ -2,6 +2,7 @@
 include_once BASE_DIR ."clases/dao/dao.Usuario.php";
 include_once BASE_DIR ."clases/dao/dao.Rol.php";   
 include_once BASE_DIR ."clases/dao/dao.Sala.php";   
+include_once BASE_DIR ."clases/dao/dao.Guardia.php";   
 
 
 function ComboUsuario($first=true,$text='Seleccione el usuario...')
@@ -10,6 +11,12 @@ function ComboUsuario($first=true,$text='Seleccione el usuario...')
 	return PresentationUtil::getCombo($usuarioDAO->getAll("usuario"), "usuario",$first,$text);
 }
 
+
+function ComboGuardia($first=true,$text='Seleccione el guardia...')
+{
+	$guardiaDAO = new GuardiaDAO();
+	return PresentationUtil::getCombo($guardiaDAO->getAll("nombre"), "nombre",$first,$text);
+}
 
 
 function ComboRol($first=true,$text='')

@@ -1,18 +1,18 @@
 <?
-include_once BASE_DIR ."clases/negocio/clase.Guardia.php";
+include_once BASE_DIR ."clases/negocio/clase.Ronda.php";
 
-class DispositivoDel extends Action {
+class RondaDel extends Action {
 	var $tpl = "";
 	
 	function procesar(&$nextAction){
-		$guardia = new Guardia($_GET['id']);
-		$guardia->baja_logica = 1;
+		$ronda = new Ronda($_GET['id']);
+		$ronda->baja_logica = 1;
 		
-		if ($guardia->update()) {
-			$nextAction->setNextAction("GuardiaAdm", "eliminacion.guardia.ok");			
+		if ($ronda->update()) {
+			$nextAction->setNextAction("RondaAdm", "eliminacion.ronda.ok");			
 		}
 		else {
-			$nextAction->setNextAction("GuardiaAdm", "eliminacion.guardia.error",array(error => "1"));	
+			$nextAction->setNextAction("RondaAdm", "eliminacion.ronda.error",array(error => "1"));	
 		}
 	}
 }

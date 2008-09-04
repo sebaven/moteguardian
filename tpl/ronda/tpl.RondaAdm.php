@@ -3,42 +3,54 @@
 <?=$errores ?>
 <?=$mensaje ?>
 
-<form method="GET" name="guardia_adm" action="">
-	<input type="hidden" name="accion" value="guardia_adm" />
+<form method="GET" name="ronda_adm" action="">
+	<input type="hidden" name="accion" value="ronda_adm" />
 		
 		
-	<fieldset>
-		<legend><?= $keys['guardia.adm.datos'] ?></legend><br>
+	<fieldset>	
+		<legend>Datos de la ronda</legend><br>
 		<br>
 		
-		<table width="100%" align="center" border="0">
+		
+		<table width="70%" align="center" border="0">
 		<tr>
-			<td align="right" width="25%">Nombre</td>
-			<td><input type="text" name="nombre" value="<?= htmlentities($nombre) ?>" style="width: 410px"/></td>            
-		</tr>
-		<tr>
-			<td align="right">Codigo tarjeta RFID</td>
-			<td><input type="text" name="codigo_tarjeta" value="<?= htmlentities($codigo_tarjeta) ?>" style="width: 410px"/></td>
-		</tr>
-		<tr>
-			<td align="right">Usuario</td>
+			<td align="right" width="25%">Guardia</td>
 			<td>
-				<select name="id_usuario" style="width: 415px">
-	                <? ComboControl::Display($options_usuarios, $id_usuario)?>
+				<select name="id_guardia" style="width: 290px">
+	                <? ComboControl::Display($options_guardias, $id_guardia)?>
 	              </select>            
-			</td>			
+			</td>
+		</tr>	
+		<tr height="15px">
+			<td colspan="2"></td>
 		</tr>				
+		<tr>
+			<td rowspan="2" align="right">Fecha de b&uacute;squeda</td>
+			<td align="center" width="40%">
+				Desde					
+				<input type="text" id="fecha_desde" name="fecha_desde" readonly="readonly" size="10" value="<?= $fecha_desde ?>" />
+				<button type="button" id="mostrarCalendario_desde">...</button><?= getCalendarDefinition( "fecha_desde", "mostrarCalendario_desde"); ?>
+				<select id="horas_desde" name="horas_desde" ><? ComboControl::Display($options_horas_desde, $id_horas_desde)?></select> :
+				<select id="minutos_desde" name="minutos_desde" ><? ComboControl::Display($options_minutos_desde, $id_minutos_desde)?></select>
+			</td>					
+		</tr>			
+		<tr>
+			<td align="center">
+				Hasta		
+				<input type="text" id="fecha_hasta" name="fecha_hasta" readonly="readonly" size="10" value="<?= $fecha_hasta ?>" />
+				<button type="button" id="mostrarCalendario_hasta">...</button><?= getCalendarDefinition( "fecha_hasta", "mostrarCalendario_hasta"); ?>
+				<select id="horas_hasta" name="horas_hasta" ><? ComboControl::Display($options_horas_hasta, $id_horas_hasta)?></select> :
+				<select id="minutos_hasta" name="minutos_hasta" ><? ComboControl::Display($options_minutos_hasta, $id_minutos_hasta)?></select>
+			</td>						
+		</tr>		
 		</table>
-	        
-	        	
+		
 		<br>
-		<div align="center" style="color:gray;"><i>Si no completa ning&uacute;n campo trae todos los guardias</i></div>
 		<br>
 		<div align="center">			
 			<span class="botonGrad"><input type="submit" name="btnBuscar" value="Buscar" class="boton" /></span>	
-			&nbsp;&nbsp;<span class="botonGrad"><a href="?accion=guardia_adm"><input type="button" value="Limpiar" class="boton"/></a></span>			
+			&nbsp;&nbsp;<span class="botonGrad"><a href="?accion=ronda_adm"><input type="button" value="Limpiar" class="boton"/></a></span>			
 		</div>
-		<br>
 	</fieldset>	
 	
 	

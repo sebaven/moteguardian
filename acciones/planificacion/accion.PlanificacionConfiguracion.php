@@ -105,13 +105,8 @@ class PlanificacionConfiguracion extends Action
 			$planificacion->id = $_GET['id'];
 		}
 
-		if ( isset($_GET["id_recoleccion"]) ){
-			$planificacion->id_recoleccion = $_GET["id_recoleccion"];
-			$planificacion->id_envio = "NULL";
-				
-		}else if ( isset($_GET["id_envio"]) ){
-			$planificacion->id_envio = $_GET["id_envio"];
-			$planificacion->id_recoleccion = "NULL";
+		if ( isset($_GET["id_ronda"]) ){
+			$planificacion->id_ronda = $_GET["id_ronda"];				
 		}
 			
 		if($_POST["radioFrecuencia"]=='absoluto') {

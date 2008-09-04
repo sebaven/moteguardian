@@ -64,6 +64,29 @@
 		<rol>ADMINISTRADOR</rol>
 	</permiso>
     
+    
+    <!-- ITEM RONDA  -->
+
+	<permiso>
+		<accion>ItemRondaBaja</accion>
+		<rol>ADMINISTRADOR</rol>
+	</permiso>
+	<permiso>
+		<accion>ItemRondaConfiguracion</accion>
+		<rol>ADMINISTRADOR</rol>
+	</permiso>
+	<permiso>
+		<accion>SalidaPopupItemRonda</accion>
+		<rol>ADMINISTRADOR</rol>
+	</permiso>
+
+	<!-- SALA -->
+	
+	<permiso>
+		<accion>SalaSelect</accion>
+		<rol>ADMINISTRADOR</rol>
+	</permiso>
+    
     <!-- DISPOSITIVO -->
     
     <permiso>
